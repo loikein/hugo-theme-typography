@@ -19,9 +19,6 @@
     <span title="{{ T "readingTimeTitle" }}">
       <i class="fa fa-hourglass-half"></i><span>{{ T "readingTime" .ReadingTime}}</span>
     </span>
-    <span>
-      <i class="fa fa-eye"></i><span id="busuanzi_value_page_pv" title="{{T "pageviews" }}">0</span>
-    </span>
     {{ with .Params.categories }}
     <span>
       <i class="fa fa-folder" aria-hidden="true"></i>{{range .}}<span><a href="{{ "categories" | absURL }}/{{ . | urlize }}">{{ . }}</a></span>{{end}}

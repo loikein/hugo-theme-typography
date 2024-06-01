@@ -3,9 +3,9 @@
 
 name = "hugo-theme-typography"
 license = "MIT"
-licenselink = "https://github.com/lpgph/hugo-theme-typography/blob/master/LICENSE"
+licenselink = "https://github.com/loikein/hugo-theme-typography/blob/main/LICENSE"
 description = ""
-homepage = "https://github.com/lpgph/hugo-theme-typography"
+homepage = "https://github.com/loikein/hugo-theme-typography"
 tags = [
   "hugo",
   "theme",
@@ -14,20 +14,22 @@ tags = [
   "responsive",
 ]
 features = [
-  "cover-image",
-  "favicon",
   "pjax",
-  "multilingual",
   "pagination",
   "social-menu",
   "syntax-highlighting",
-  "SEO Optimized"
 ]
-min_version = "0.62"
+min_version = "0.115.0"
 
 [author]
-  name = "lpgph"
-  homepage = "https://lpgph.github.io"
+  [author.lpgph]
+    name = "lpgph"
+    homepage = "https://lpgph.github.io"
+  [author.loikein]
+    name = "loikein"
+    homepage = "https://github.com/loikein"
 
-
-
+[original]
+  name = "Makito"
+  homepage = "https://github.com/sumimakito"
+  repo = "https://github.com/sumimakito/hexo-theme-typography"

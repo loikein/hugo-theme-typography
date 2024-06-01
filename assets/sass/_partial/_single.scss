@@ -51,7 +51,20 @@
     }
 
     hr {
-      border: 0.06em solid #dbdbdb
+      padding: 0;
+      border: none;
+      width: 100%;
+      display: block;
+      text-align: center;
+      height: 1.2rem;
+      margin: 1.2rem 0;
+
+      &::after {
+        content: '❧';
+        font-size: 1.2rem;
+        line-height: 1;
+        color: $global-font-color;
+      }
     }
 
     strong,
@@ -121,7 +134,6 @@
       margin: 0 0.12em;
       font-size: 90%;
       white-space: nowrap;
-      text-shadow: 0 0.06em #fff
     }
 
     p {
@@ -208,12 +220,14 @@
       font-family: Hack, monospace;
       font-size: 0.9em;
       padding: 0.5em;
-      display: block;
       color: #333;
       overflow-x: auto;
       background: #f8f8f8;
       position: relative;
-      &:after {
+    }
+
+    .highlight code::after,
+    pre code::after {
         content: attr(data-lang);
         text-transform: capitalize;
         position: absolute;
@@ -226,7 +240,6 @@
         font-weight: 700;
         height: 2em;
         color: #716c6c;
-      }
     }
 
     pre {
@@ -238,6 +251,10 @@
       overflow-x: auto;
       overflow-y: hidden;
       border-radius: 0.5em;
+
+      code {
+        display: block;
+      }
     }
 
     @media only screen and (min-width: 48rem) {

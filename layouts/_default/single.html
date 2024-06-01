@@ -9,17 +9,15 @@
     <!-- <span>
       <i class="fa fa-user-o"></i><span><a href="{{ .Site.BaseURL }}about" title="{{ T "author" }}">{{ .Site.Author.name }}</a></span>
     </span> -->
-    <span>
-      {{ T "publish" }} <span><time datetime="{{ .Date }}">{{ .Date.Format .Site.Params.DateFormat  }}</time></span>
+    {{- if .Params.date -}}
+    <span>{{ T "publish" }} <span><time datetime="{{ .Date }}">{{ .Date.Format .Site.Params.DateFormat  }}</time></span>
+    {{- end -}}
     </span>
     <span title="{{ T "wordCountTitle" }}">
       <i class="fa fa-keyboard-o"></i><span>{{ T "wordCount" .WordCount}}</span>
     </span>
     <span title="{{ T "readingTimeTitle" }}">
       <i class="fa fa-hourglass-half"></i><span>{{ T "readingTime" .ReadingTime}}</span>
-    </span>
-    <span>
-      <i class="fa fa-eye"></i><span id="busuanzi_value_page_pv" title="{{T "pageviews" }}">0</span>
     </span>
     {{ with .Params.categories }}
     <span>

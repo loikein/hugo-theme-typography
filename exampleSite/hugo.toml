@@ -1,0 +1,148 @@
+baseURL = "https://example.org/"
+languageCode = "zh-Hans"
+title = "诗和远方"
+enableRobotsTXT = true
+hasCJKLanguage = true
+paginate = 20
+paginatePath = "page"
+enableEmoji = true
+DefaultContentLanguage = "zh"
+mainSections = ["posts"]
+enableInlineShortcodes = true
+theme = "../"
+# hugo server --themesDir .. --theme .
+
+rssLimit = 20             # Limit Entry Count to Rss file # 限制 Rss 文章输出数量
+
+# disqusShortname = ""
+# googleAnalytics = ""
+
+copyright = "2024"
+enableGitInfo = true # use git commit log to generate lastmod record # 可根据 Git 中的提交生成最近更新记录。
+
+# Highlight options. See https://gohugo.io/content-management/syntax-highlighting/
+pygmentsStyle = "default"
+#pygmentsCodeFences = true # Enable syntax highlighting with GitHub flavoured code fences
+pygmentsUseClasses = true # Use CSS classes to format highlighted code
+#pygmentsCodefencesGuessSyntax = true
+#pygmentsOptions = "linenos=table"
+
+#[taxonomies]
+# author = "author"
+# tag = "tags"
+# category = "categories"
+#  note = "note"
+
+#disableKinds = ["taxonomyTerm"]
+
+[author]
+  name = "焚琴"
+
+[social]
+  Twitter = ""
+  GitHub = "lpgph"
+  Facebook = ""
+  LinkIn = ""
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[outputs]
+  home = [ 'RSS', 'HTML' ]
+
+[outputFormats]
+  [outputFormats.RSS]
+    mediatype = 'application/rss'
+    baseName = 'feed'
+
+[Params]
+  CreateDate = "2024-06-01T02:36:49+0100"
+  Description = '勿以时穷而忘节，勿以势起而乱性'
+  copyright = '[BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)'
+
+  Favicon = 'img/favicon.ico'
+
+  DateFormat = '2006-01-02'
+  MonthFormat = '2006-01'
+  FancyBox = true
+  CreativeCommons = true
+  MathJax = true
+  # 代码高亮格式
+  HighLightStyle = 'github'
+  #paginateOriginalStyle = true
+  # 首页展示内容
+  mainSections = ["posts"]
+
+  [Params.Valine]
+    appId = ''
+    appKey = ''
+  # [Params.Gitalk]
+  #   language = 'zh-CN'
+  #   clientID = ''
+  #   clientSecret = ''
+  #   repo = ''
+  #   owner = ''
+  #   admin = ['']
+  #   distractionFreeMode = false
+
+  [Params.Archive]
+    page = 20
+
+[Menu]
+  [[Menu.Main]]
+    Name = 'home'
+    identifier = "home"
+    # post = "<span class='alert'>New!</span>"
+    # pre = "home"
+    URL = '/'
+    weight = 1
+  [[Menu.Main]]
+    Name = 'archive'
+    identifier = "archive"
+    # post = "<span class='alert'>New!</span>"
+    # pre = "archive"
+    URL = '/posts/'
+    weight = 2
+  [[Menu.Main]]
+    Name = 'notes'
+    identifier = "notes"
+    # post = "<span class='alert'>New!</span>"
+    # pre = "sticky-note"
+    URL = '/notes/'
+    weight = 3
+  [[Menu.Main]]
+    Name = 'photos'
+    identifier = "photos"
+    # post = "<span class='alert'>New!</span>"
+    # pre = "photo"
+    URL = '/photos/'
+    weight = 4
+  [[Menu.Main]]
+    Name = 'categories'
+    identifier = "categories"
+    URL = '/categories/'
+    weight = 5
+  [[Menu.Main]]
+    Name = 'tags'
+    identifier = "tags"
+    URL = '/tags/'
+    weight = 6
+  [[Menu.Main]]
+    Name = 'about'
+    identifier = "about"
+    # post = "<span class='alert'>New!</span>"
+    # pre = "user"
+    URL = '/about/'
+    weight = 7
+
+# full top bottom left right
+
+# [related]
+#   threshold= 80
+#   includeNewer= false
+#   toLower= false
+#   [indices]
+#   - name: keywords
+#     weight: 100
+#   - name: date
+#     weight: 10

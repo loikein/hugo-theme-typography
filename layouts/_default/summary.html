@@ -4,8 +4,10 @@
   </a>
 </h2>
 <p class="list-tags">
+  {{- if .Params.date -}}
   <span>
-    {{ T "publish" }} <span><time datetime="{{ .Date }}">{{ .Date.Format .Site.Params.DateFormat  }}</time></span>
+    {{ T "publish" }} <span><time datetime="{{ .Date }}">{{ .Date.Format (default "2006-01-02" .Site.Params.DateFormat ) }}</time></span>
+  {{ end }}
   </span>
   {{ with .Params.categories }}
     <span>
@@ -18,4 +20,4 @@
     </span>
   {{ end }}
   </p>
-<article>{{ .Summary }}......</article>
+<article>{{ .Summary }}……</article>

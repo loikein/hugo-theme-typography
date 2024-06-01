@@ -7,14 +7,11 @@
 
 <ul class="nav">
   {{ range .Site.Menus.main  }}
-  <li><a href="{{ .URL }}" target="_self" data-pjax title="{{ T .Name }}">{{ T .Name }}</a></li>
+  <li><a href="{{ .URL }}" target="_self" data-pjax title="{{ .Name }}">{{ .Name }}</a></li>
   {{ end }}
 </ul>
 {{ if .Site.Social }}
 <div class="social" >
-  {{ with .Site.Social.weibo }}
-    <a href="http://weibo.com/{{ . }}" target="_blank" title="weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a>
-  {{ end }}
   {{ with .Site.Social.twitter }}
     <a href="https://twitter.com/{{ . }}" target="_blank" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
   {{ end }}
@@ -31,11 +28,6 @@
     <a href="https://www.linkedin.com/{{ . }}" target="_blank" title="linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
   {{ end }}
 </div>
-{{end}}
-
+{{ end }}
 
 {{ partial "footer.html" . }}
-
-
-
-

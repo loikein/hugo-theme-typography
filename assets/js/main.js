@@ -10,23 +10,12 @@ function initScroll() {
     if(aScrollTimer){
       clearTimeout(aScrollTimer);
     }
-    aScrollTimer = setTimeout(function(){
-      if ($(window).scrollTop() > 100) {
-        $("#backToTop").fadeIn(1000);
-      } else {
-        $("#backToTop").fadeOut(1000);
-      }
-    },100);
   });
   $("#article-toc").navScrollSpy({
       container: window,
       current:"active",
       scrollSpeed: 50
   });
-}
-
-function backToTop() {
-  $("html").stop().animate({scrollTop: 0}, 1000);
 }
 
 function showToc() {
