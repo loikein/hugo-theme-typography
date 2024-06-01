@@ -6,6 +6,7 @@
     font-style: normal;
     transition: padding .8s ease 0s,background-color .8s ease 0s;
     background-color: transparent;
+    font-family: $global-serif-font-family;
 
     &:hover {
       padding: 1rem 0 3rem 0;

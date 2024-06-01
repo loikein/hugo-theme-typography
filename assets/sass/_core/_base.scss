@@ -1,29 +1,8 @@
-html {
-
-  body,
-  span,
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: $global-font-family;
-  }
+body {
+  font-family: $global-font-family;
 
   &.serif {
-    body,
-    span,
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: $global-serif-font-family;
-    }
+    font-family: $global-serif-font-family;
   }
 }
 
