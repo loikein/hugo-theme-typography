@@ -10,7 +10,7 @@ DefaultContentLanguage = "zh"
 mainSections = ["posts"]
 enableInlineShortcodes = true
 theme = "../"
-# hugo server --themesDir .. --theme .
+# cd exampleSite && hugo server --themesDir .. --theme .
 
 rssLimit = 20             # Limit Entry Count to Rss file # 限制 Rss 文章输出数量
 
@@ -39,10 +39,10 @@ pygmentsUseClasses = true # Use CSS classes to format highlighted code
   name = "焚琴"
 
 [social]
-  Twitter = ""
-  GitHub = "lpgph"
-  Facebook = ""
-  LinkIn = ""
+  Twitter = "example"
+  GitHub = "example"
+  Facebook = "example"
+  LinkIn = "example"
 
 [markup.goldmark.renderer]
   unsafe = true
