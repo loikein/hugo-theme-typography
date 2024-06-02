@@ -4,18 +4,16 @@
 {{ partial "body_head.html" . }}
 </head>
 <body>
-  <div class="react-container" >
-    <header class="header-container">
-      {{ partial "header.html" . }}
-      {{ partialCached "footer.html" . }}
-    </header>
-    <div class="main-container" id="main-container">
-      <main class="main-content" id="main">
-      {{ block "main_content" . }}
-      {{ end }}
-      </main>
-    </div>
-  </div>
+<div class="react-container" >
+  <header class="header-container">
+    {{ partial "header.html" . }}
+    {{ partialCached "footer.html" . }}
+  </header>
+  <main class="main-content" id="main">
+  {{ block "main_content" . }}{{ end }}
+  </main>
+  <div class="footer-container-mobile">{{ partialCached "footer.html" . }}</div>
+</div>
 {{ partialCached "body_foot.html" . }}
 </body>
 </html>

@@ -85,17 +85,25 @@
 
       .footer {
         display: none;
+        visibility: collapse;
       }
     }
 
-    .main-container {
+    #main {
       padding: 1rem;
       width: auto;
     }
   }
 
-  .footer {
-    display: block;
-    margin-bottom: 4rem;
+  .footer-container-mobile {
+    order: 10;
+    margin: 0 auto 4rem;
+    text-align: center;
+    overflow: auto;
+
+    .footer {
+      display: block;
+      margin: 0;
+    }
   }
 }
