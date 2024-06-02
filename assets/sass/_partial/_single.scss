@@ -78,12 +78,20 @@
   }
 
   blockquote {
-    border-left: 5px solid #eee;
+    border-left: 5px solid rgba($global-font-color, .3);
     margin: 0 0 20px;
     padding: 10px 20px;
 
     :first-child {
       margin-top: 0;
+      // &::before {
+      //   content: "\00275D";
+      //   opacity: .15;
+      //   font-size: 5rem;
+      //   line-height: 30px;
+      //   position: absolute;
+      //   left: 7px;
+      // }
     }
 
     :last-child {

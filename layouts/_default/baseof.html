@@ -1,22 +1,21 @@
 <!DOCTYPE HTML>
 <html lang="{{ default .Site.Language.LanguageCode .Params.Language }}">
 <head>
-{{ partial "head.html" . }}
+{{ partial "body_head.html" . }}
 </head>
-
 <body>
   <div class="react-container" >
     <header class="header-container">
       {{ partial "header.html" . }}
+      {{ partialCached "footer.html" . }}
     </header>
     <div class="main-container" id="main-container">
-      <main class="main-content">
+      <main class="main-content" id="main">
       {{ block "main_content" . }}
       {{ end }}
       </main>
-      {{ partial "footer.html" . }}
     </div>
   </div>
-  {{ partial "after_footer.html" .}}
+{{ partialCached "body_foot.html" . }}
 </body>
 </html>

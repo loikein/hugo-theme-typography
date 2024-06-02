@@ -1,11 +1,12 @@
 # hugo-theme-typography
 
+**WIP**
+
 Upstream: 
 
 - [sumimakito/hexo-theme-typography: Rediscover the beauty of typography.](https://github.com/sumimakito/hexo-theme-typography)
 - [lpgph/hugo-theme-typography: hugo theme](https://github.com/lpgph/hugo-theme-typography) \(Demo: [诗和远方](https://lpgph.github.io/)\)
-
-支持 Valine 和 Gitalk, Disqus
+- [loikein/hugo-typography](https://github.com/loikein/hugo-typography) \(private repo\)
 
 ## Fork notes
 
@@ -13,7 +14,14 @@ Upstream:
 
 - [x] 移除了 Live2D-Widget，APlayer，以及其余的一些原主题没有的部件。
 - [x] 增加了 example site。
-- [ ] Valine 已经停止更新，考虑换到 [ Waline](https://waline.js.org/en/migration/valine.html)（但其实我也不用）
+- [x] Valine 已经停止更新，换到 [Waline](https://waline.js.org/en/migration/valine.html)（但其实我也不用）
+
+## Features
+
+- Comment systems \(not tested\)
+    - Disqus
+    - Gitalk
+    - Waline
 
 ## Config
 

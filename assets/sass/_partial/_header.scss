@@ -1,56 +1,68 @@
-.header-container{
-  .title{
+.header-container {
+  .title {
     border-left: solid $global-font-color .125rem;
     padding-bottom: 4rem;
-    font-weight: bolder;
     font-style: normal;
-    transition: padding .8s ease 0s,background-color .8s ease 0s;
+    transition: padding .5s ease 0s, background-color .5s ease 0s;
     background-color: transparent;
     font-family: $global-serif-font-family;
 
     &:hover {
       padding: 1rem 0 3rem 0;
-      color: $global-background-color ;
-      background-color: $global-font-color ;
+      color: $global-background-color;
+      background-color: $global-font-color;
+
       * {
-        color: $global-background-color ;
+        color: $global-background-color;
         background-color: transparent;
       }
     }
-    a{
+
+    a {
       border: none;
       display: inline-block;
-      h1{
-        font-size: 3rem;
+
+      h2 {
+        font-size: 2rem;
+        font-weight: bolder;
       }
-      h3{
+
+      h3 {
         font-size: 1.5rem;
+        font-weight: lighter;
+        padding-top: 1px;
       }
     }
   }
-  .nav{
+
+  .nav {
     margin-top: 1rem;
     font-size: 1.1rem;
     font-weight: bolder;
     font-style: normal;
-    li{
+
+    li {
       margin: .5rem 0;
     }
   }
-  .social{
+
+  .social {
     font-size: 1.4rem;
     line-height: 1;
-    a{
+
+    a {
       border: none;
       padding: 0;
-      &:hover{
+
+      &:hover {
         color: $global-font-color;
-        background-color:$global-background-color ;
+        background-color: $global-background-color;
         border-bottom: solid transparent 0.125rem;
       }
     }
   }
-  .footer{
+
+  .footer {
     display: block;
   }
 }

@@ -75,9 +75,9 @@ pygmentsUseClasses = true # Use CSS classes to format highlighted code
   # 首页展示内容
   mainSections = ["posts"]
 
-  [Params.Valine]
-    appId = ''
-    appKey = ''
+  [Params.Waline]
+    serverURL = ''
+
   # [Params.Gitalk]
   #   language = 'zh-CN'
   #   clientID = ''

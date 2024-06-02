@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/lib/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/lib/fancybox/jquery.fancybox.js"></script>
+
+<script>
+  function initFacybox() {
+    $('article figure img').each(function(){
+        if ($(this).parent().attr('data-fancybox="images"')) return;
+        var alt = this.alt;
+        // if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+        $(this).wrap('<a href="' + this.src + '" title="' + alt + '" data-fancybox="images" ></a>');
+
+    });
+    if($.fancybox){
+      $('[data-fancybox]').fancybox({
+        protect: true,
+        buttons:[
+          "zoom",
+          //"share",
+          "slideShow",
+          "fullScreen",
+          "thumbs",
+          "close"
+        ],
+        arrows: true
+      });
+    }
+  }
+</script>
