@@ -38,9 +38,13 @@ Ref: [Site methods | Hugo](https://gohugo.io/methods/site/)
 
 .
 
-- `languageCode`: Enter the [RFC 5646 tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang) for your contents
-- `defaultContentLanguage`: No need to set if the site only has one language version. For multilingual sites, see [Multilingual mode | Hugo](https://gohugo.io/content-management/multilingual/#changes-in-hugo-01120)
+Ref: [Multilingual mode | Hugo](https://gohugo.io/content-management/multilingual/#changes-in-hugo-01120)
+
 - `hasCJKLanguage`: Improves word count for CJK languages
+- `defaultContentLanguage`: Must be one of the language codes in `languages.lang`
+- `languages.lang`
+    - `lang`: Enter the primary subtag of the [RFC 5646 tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang) for your contents, NO subsequent sub-tags
+    - `languageCode`: Enter the [RFC 5646 tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang) for your contents, including any subsequent sub-tags
 
 .
 

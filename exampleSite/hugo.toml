@@ -4,8 +4,13 @@ theme = "../"
 # cd exampleSite && hugo server --themesDir .. --theme .
 copyright = "2024 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)"
 
-languageCode = "zh-Hans"
 hasCJKLanguage = true
+defaultContentLanguage = "zh"
+
+[languages.zh]
+  languageName = "Chinese (Simplified)"
+  languageCode = "zh-Hans"
+  languageDirection = "ltr"
 
 mainSections = ["posts"]
 paginate = 20

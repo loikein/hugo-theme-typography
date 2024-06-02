@@ -1,7 +1,6 @@
 # Translations for Simplified Chinese
 # https://gohugo.io/content-management/multilingual/#translation-of-strings
 
-
 [home]
   other = "主页"
 
@@ -58,9 +57,6 @@ other = "{{ .Count }} 字"
 
 [readingTime]
 other = "{{ .Count }} 分钟"
-
-[copyright]
-other = "本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可"
 
 # === Post ===
 [posts]
@@ -138,13 +134,12 @@ other = "阅读次数"
 [pageComments]
 other = "评论数量"
 
-
 [author]
 other = "作者"
 
-
 [archive]
 other = "归档"
+
 # === posts/single.html ===
 [toc]
 other = "目录"

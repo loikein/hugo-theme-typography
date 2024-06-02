@@ -52,10 +52,10 @@ other = "Theme - %s"
 other = "Table of Contents"
 
 [publish]
-other = "published on"
+other = "Published on"
 
 [publishDate]
-other = "published date"
+other = "Published date"
 
 [included]
 other = "included in"
@@ -159,12 +159,7 @@ other = "Not Hot Posts"
 [seeAlso]
 other = "See Also"
 
-[copyright]
-other = "本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可"
-
-
 # === Pagination ===
-
 
 [hosted]
 other = "Hosted by %s "
