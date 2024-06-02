@@ -1,6 +1,6 @@
 body {
   font-family: $global-font-family;
-
+  font-size: 16px;
   &.serif {
     font-family: $global-serif-font-family;
   }
@@ -9,6 +9,7 @@ body {
 a {
   color: $global-font-color;
   padding: 0.125rem;
+  text-decoration: none;
 
   transition: color .3s ease 0s,background-color .3s ease 0s;
   -moz-transition: color .3s ease 0s,background-color .3s ease 0s;
@@ -69,12 +70,15 @@ body{
     z-index: 1;
     position: fixed;
   }
-  @if lightness($global-background-color) >50 {
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACFJREFUeNpiZGBg4GegAsBlCD8TqSYNQg2Mo6FEBAAIMACdPABtrSW/IQAAAABJRU5ErkJggg==");
+  @if lightness($global-background-color) >50% {
+    // background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACFJREFUeNpiZGBg4GegAsBlCD8TqSYNQg2Mo6FEBAAIMACdPABtrSW/IQAAAABJRU5ErkJggg==");
+    background-image: linear-gradient($global-background-color 1px, transparent 1px),
+                      linear-gradient(to right, $global-background-color 1px, transparent 1px);
+    background-size: $global-background-size;
   } @else {
-    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi/P//Py8DpQCXISBxJlING4QaGEdDiQgAEGAAg8sST3LGZYoAAAAASUVORK5CYII=");
+    // background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi/P//Py8DpQCXISBxJlING4QaGEdDiQgAEGAAg8sST3LGZYoAAAAASUVORK5CYII=");
+    background-color: #FFF;
   }
-  @include scrollbar;
 }
 
 .vertical-text {

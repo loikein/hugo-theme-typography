@@ -77,9 +77,30 @@
 
 <link rel="stylesheet" href="/font/font-awesome/css/font-awesome.min.css">
 
-{{ $style := resources.Get "sass/index.scss" | toCSS | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $style.RelPermalink }}" media="screen" />
 
+{{- /*
+Implement multiple colour schemes like hugo-theme-terminal
+https://github.com/panr/hugo-theme-terminal/blob/master/layouts/partials/head.html
+ */ -}}
+
+{{ $defaultStyles := resources.Get "scss/index.scss" }}
+<!-- Local Theme Variables -->
+{{ if and (isset .Params "color") (not (eq .Params.color "")) }}
+  {{ $localColorCss := resources.Get (printf "scss/_color/%s.scss" .Params.color) }}
+  {{ $localCss := slice $localColorCss $defaultStyles | resources.Concat (printf "scss/%s-local.scss" .Params.color) }}
+  {{ $localColorStyles := $localCss | resources.ToCSS | resources.Minify }}
+  <link rel="stylesheet" href="{{ $localColorStyles.Permalink }}">
+{{ else }}
+  <!-- Theme Variables -->
+  {{ $colorCss := resources.Get (printf "scss/_color/%s.scss" ($.Site.Params.ThemeColor | default "ocean")) }}
+  {{ $css := slice $colorCss $defaultStyles | resources.Concat "scss/index.scss" }}
+  {{ $styles := $css | resources.ToCSS | resources.Minify }}
+  <link rel="stylesheet" href="{{ $styles.Permalink }}">
+{{ end }}
+
+<script src="/js/jquery-3.3.1.min.js"></script>
 <link rel="stylesheet" href="/lib/highlight/styles/github.css">
 <script src="/lib/highlight/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+{{ partial "body_head_custom.html" . }}

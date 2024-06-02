@@ -131,13 +131,14 @@
 
   .post-list {
     padding-bottom: 1rem;
+    list-style: none;
+    padding-inline-start: 0;
 
-    &>li {
+    li {
       margin-bottom: 1rem;
 
-      h1 {
-        font-weight: bold;
-        font-size: 1.8rem;
+      h2 {
+        margin-bottom: 0;
       }
     }
   }

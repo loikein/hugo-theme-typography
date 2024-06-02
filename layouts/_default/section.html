@@ -1,7 +1,6 @@
 {{ define "main_content" }}
-  <section class="post-list">
-    <p class="path-title">{{ T .Title }}<span>({{ len .Pages }})</span></p>
-    <ul>
+  <p class="path-title">{{ T .Title }}<span>({{ len .Pages }})</span></p>
+    <ul class="post-list">
       {{ $paginator := .Paginate .Pages }}
       {{ range $paginator.Pages }}
         <li>
@@ -9,7 +8,6 @@
         </li>
       {{ end }}
     </ul>
-  </section>
     <!-- pagination -->
   {{ template "_internal/pagination.html" . }}
 {{ end }}

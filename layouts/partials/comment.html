@@ -11,7 +11,7 @@
   {{ end }}
 
   <script>
-  $(function () {
+  (function () {
     {{ if  .Site.Params.Gitalk }}
     var gitalk = new Gitalk({
       language: '{{ .Site.Params.Gitalk.language }}' ,
