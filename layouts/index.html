@@ -1,4 +1,5 @@
 {{ define "main_content" }}
+<section class="post-archive-detail">
   <ul class="post-list">
     {{ $pages := where .Site.RegularPages "Type" "in" site.Params.mainSections }}
     {{ $paginator := .Paginate $pages}}
@@ -8,6 +9,6 @@
       </li>
     {{ end }}
   </ul>
-    <!-- pagination -->
-  {{ template "_internal/pagination.html" . }}
+</section>
+{{ template "_internal/pagination.html" . }}
 {{ end }}

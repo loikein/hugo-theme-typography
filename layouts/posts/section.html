@@ -1,18 +1,21 @@
 {{ define "main_content" }}
-  <section class="archive-list">
-    <p class="path-title">{{ T .Title }}<span>({{ len .Pages }})</span></p>
-    {{ range (.Paginate (.Pages.GroupByDate "2006") (index .Site.Params.Archive.page | default 20) ).PageGroups  }}
-    <section>
-      <h2>{{ .Key }}</h2>
-      <ul>
-        {{ range .Pages }}
-        <li>
-          <span>{{ .Date.Format "01-02" }}</span><a href="{{ .Permalink }}">{{ .Title }}</a>
-        </li>
-        {{ end }}
-      </ul>
-    </section>
-    {{ end }}
+{{/*
+Goal: to make this the same structure as default section.html
+*/}}
+<section class="post-archive-list">
+  <h1 class="path-title">{{ .Title }}<span>({{ len .Pages }})</span></h1>
+  {{ range (.Paginate (.Pages.GroupByDate "2006") (index .Site.Params.Archive.page | default 20) ).PageGroups  }}
+  <section class="post-list">
+    <h2>{{ .Key }}</h2>
+    <ul>
+      {{ range .Pages }}
+      <li>
+        <span>{{ .Date.Format "01-02" }}</span><a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+    </ul>
   </section>
-  {{ template "_internal/pagination.html" . }}
+  {{ end }}
+</section>
+{{ template "_internal/pagination.html" . }}
 {{ end }}

@@ -1,4 +1,4 @@
-.main-content {
+#main {
   figure {
     transition: all 0.6s;
 
@@ -102,12 +102,28 @@
     font-size: 1.5rem;
   }
 
-  .archive-list {
-    section {
-      h2 {
-        font-size: 1.5rem;
-      }
+  .post-archive-detail {
+    h1 {
+      margin-bottom: 1rem;
+    }
+    .post-list {
+      padding-bottom: 1rem;
+      list-style: none;
+      padding-inline-start: 0;
+      margin: 0;
 
+      li {
+        margin-bottom: 1rem;
+
+        h2 {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .post-archive-list {
+    .post-list {
       &>ul {
         padding-left: 2rem;
 
@@ -126,21 +142,6 @@
     }
   }
 
-  .post-list {
-    padding-bottom: 1rem;
-    list-style: none;
-    padding-inline-start: 0;
-    margin: 0;
-
-    li {
-      margin-bottom: 1rem;
-
-      h2 {
-        margin: 0;
-      }
-    }
-  }
-
   .list-tags {
     margin: .5rem 0;
     font-size: 0.9rem;
@@ -155,10 +156,11 @@
     }
   }
 
-  .main-post {
+  .post-container {
     &>h1 {
       font-weight: 700;
       font-size: 1.8rem;
+      margin-top: 0;
     }
 
     &>.list-tags {
