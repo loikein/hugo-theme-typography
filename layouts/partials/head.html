@@ -12,6 +12,10 @@
 <meta name='apple-mobile-web-app-status-bar-style' content='black'>
 <meta name='format-detection' content='telephone=no'>
 
+{{ if .Site.Params.noindex }}
+<meta name="robots" content="noindex, nofollow" />
+{{ end }}
+
 {{ if .Site.Params.Twitter }}<meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@{{ .Site.Params.Twitter }}" />
 <meta name="twitter:title" content="{{ if ne .Permalink "/" }}{{ .Title }} - {{ end }}{{ .Site.Title }}" />{{ end }}

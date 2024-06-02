@@ -1,24 +1,21 @@
 baseURL = "https://example.org/"
-languageCode = "zh-Hans"
 title = "诗和远方"
-enableRobotsTXT = true
-hasCJKLanguage = true
-paginate = 20
-paginatePath = "page"
-enableEmoji = true
-DefaultContentLanguage = "zh"
-mainSections = ["posts"]
-enableInlineShortcodes = true
 theme = "../"
 # cd exampleSite && hugo server --themesDir .. --theme .
+copyright = "2024 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)"
 
-rssLimit = 20             # Limit Entry Count to Rss file # 限制 Rss 文章输出数量
+languageCode = "zh-Hans"
+hasCJKLanguage = true
+
+mainSections = ["posts"]
+paginate = 20
+paginatePath = "page"
+enableEmoji = false
+enableRobotsTXT = true
+enableGitInfo = false # use git commit log to generate lastmod record # 可根据 Git 中的提交生成最近更新记录。
 
 # disqusShortname = ""
 # googleAnalytics = ""
-
-copyright = "2024"
-enableGitInfo = true # use git commit log to generate lastmod record # 可根据 Git 中的提交生成最近更新记录。
 
 # Highlight options. See https://gohugo.io/content-management/syntax-highlighting/
 pygmentsStyle = "default"
@@ -50,6 +47,9 @@ pygmentsUseClasses = true # Use CSS classes to format highlighted code
 [outputs]
   home = [ 'RSS', 'HTML' ]
 
+[services.rss]
+  limit = 20             # Limit Entry Count to Rss file # 限制 Rss 文章输出数量
+
 [outputFormats]
   [outputFormats.RSS]
     mediatype = 'application/rss'
@@ -61,6 +61,8 @@ pygmentsUseClasses = true # Use CSS classes to format highlighted code
   copyright = '[BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)'
 
   Favicon = 'img/favicon.ico'
+
+  NoIndex = false
 
   DateFormat = '2006-01-02'
   MonthFormat = '2006-01'
