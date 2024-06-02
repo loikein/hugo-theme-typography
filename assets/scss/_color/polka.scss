@@ -1,0 +1,10 @@
+$global-font-color: #664d4d;
+$global-background-size: 5px;
+
+@mixin body-background {
+  // https://bansal.io/pattern-css#cross-dots
+  background-image: radial-gradient($global-background-color $global-background-size, transparent $global-background-size),
+                    radial-gradient($global-background-color $global-background-size, transparent $global-background-size);
+  background-size:20*$global-background-size 20*$global-background-size;
+  background-position: 0 0,10*$global-background-size 10*$global-background-size;
+}

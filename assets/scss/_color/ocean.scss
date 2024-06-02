@@ -1,1 +1,8 @@
 $global-font-color: #2e405b;
+
+@mixin body-background {
+  // https://bansal.io/pattern-css#grid
+  background-image: linear-gradient($global-background-color 1px, transparent 1px),
+                      linear-gradient(to right, $global-background-color 1px, transparent 1px);
+  background-size: $global-background-size $global-background-size;
+}

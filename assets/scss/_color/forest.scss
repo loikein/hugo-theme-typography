@@ -1,2 +1,9 @@
 $global-font-color: #204942;
-$global-background-size: 1.5rem 1.5rem;
+$global-background-size: 1.5rem;
+
+@mixin body-background {
+  // https://bansal.io/pattern-css#grid
+  background-image: linear-gradient($global-background-color 1px, transparent 1px),
+                      linear-gradient(to right, $global-background-color 1px, transparent 1px);
+  background-size: $global-background-size $global-background-size;
+}
