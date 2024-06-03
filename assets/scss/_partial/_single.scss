@@ -112,6 +112,20 @@
     padding-left: .5em
   }
 
+  details {
+    background: rgba($global-font-color, .1);
+    border-radius: 5px;
+    padding: 5px;
+
+    &[open] summary {
+      padding-bottom: 5px;
+    }
+
+    .markdown-inner :first-child {
+      padding-top: 0;
+    }
+  }
+
   ul,
   ol {
     padding-left: 2em;
@@ -149,7 +163,7 @@
   }
 
   p {
-    font-size: 105%;
+    // font-size: 105%;
     line-height: 1.7;
     margin: .7em 0;
   }
