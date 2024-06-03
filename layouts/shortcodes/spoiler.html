@@ -15,12 +15,12 @@
   Goal: keyboard friendly.
   Idea: https://stackoverflow.com/questions/62322298/
  */}}
-<span aria-label="spoiler">
+<span aria-label="spoiler" title="Spoiler">
 <input type="checkbox" id="spoiler-{{ $label }}" class="spoiler-toggle screen-reader" aria-label="spoiler toggle"/>
-<label for="spoiler-{{ $label }}" class="spoiler-inline" aria-label="spoiler content">{{ .Inner | .Page.RenderString }}</label>
-</span>
+<label for="spoiler-{{ $label }}" class="spoiler-inline" aria-label="spoiler content">{{ .Inner | .Page.RenderString }}</label><!--
+ --></span>
 {{- else -}}{{/* if is block */}}
-<details class="spoiler" aria-label="spoiler" {{ if eq $open true}}open{{ end }}>
+<details class="spoiler" aria-label="spoiler" title="Spoiler" {{ if eq $open true}}open{{ end }}>
   <summary>{{ $summary | .Page.RenderString }}</summary>
   <div class="markdown-inner" aria-label="spoiler content">
     {{ .Inner | .Page.RenderString }}
