@@ -117,8 +117,13 @@
     border-radius: 5px;
     padding: 5px;
 
+    summary {
+      cursor: zoom-in;
+    }
+
     &[open] summary {
       padding-bottom: 5px;
+      cursor: zoom-out;
     }
 
     .markdown-inner :first-child {
@@ -129,7 +134,7 @@
   ul,
   ol {
     padding-left: 2em;
-    font-size: 105%;
+    // font-size: 105%;
   }
 
   ul li {
