@@ -1,4 +1,4 @@
-.react-container {
+.main-container {
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -21,5 +21,12 @@
     order: 0;
     width: 100%;
     padding: 5rem 1rem;
+  }
+
+  @media (min-width: 48rem) {
+    .footer-container-mobile {
+      display: none;
+      visibility: collapse;
+    }
   }
 }

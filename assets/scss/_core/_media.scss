@@ -2,40 +2,40 @@
 //    720   880   1120  1440  1840  2320  2880  3520  4240  5040
 //  16 64 144 256 400 576 768 992 1248 1520  1632
 @media (min-width:48rem) {
-  .react-container {
+  .main-container {
     width: 45rem;
   }
 }
 
 @media (min-width:62rem) {
-  .react-container {
+  .main-container {
     width: 55rem;
   }
 }
 
 @media (min-width:78rem) {
-  .react-container {
+  .main-container {
     width: 70rem;
   }
 }
 
 // @media (min-width:102rem) {
-//   .react-container{
+//   .main-container{
 //     width: 90rem;
 //   }
 // }
 // @media (min-width:128rem) {
-//   .react-container{
+//   .main-container{
 //     width: 115rem;
 //   }
 // }
 // @media (min-width:162rem) {
-//   .react-container{
+//   .main-container{
 //     width: 145rem;
 //   }
 // }
 @media only screen and (max-width: 48rem) {
-  .react-container {
+  .main-container {
     flex-direction: column;
 
     .header-container {
