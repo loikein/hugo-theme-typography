@@ -46,7 +46,7 @@
       padding-top: 2rem;
       text-align: center;
 
-      .title {
+      .site-title {
         border: none;
         padding-bottom: 0;
         -webkit-writing-mode: unset;
@@ -64,7 +64,7 @@
           }
         }
 
-        h1 {
+        h2 {
           font-size: 2rem;
         }
 
@@ -73,7 +73,7 @@
         }
       }
 
-      .nav {
+      .site-nav {
         margin-top: 0.5rem;
         line-height: 1.5;
 
@@ -83,7 +83,7 @@
         }
       }
 
-      .footer {
+      .site-footer {
         display: none;
         visibility: collapse;
       }
@@ -101,9 +101,13 @@
     text-align: center;
     overflow: auto;
 
-    .footer {
+    .site-footer {
       display: block;
       margin: 0;
+
+      p {
+        margin: 0;
+      }
     }
   }
 }
