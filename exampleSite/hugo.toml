@@ -46,6 +46,9 @@ enableGitInfo = false # use git commit log to generate lastmod record # 可根�
   Facebook = "example"
   LinkIn = "example"
 
+[markup.highlight]
+  style = "friendly"       # https://xyproto.github.io/splash/docs/all.html
+
 [markup.goldmark.renderer]
   unsafe = true
 
