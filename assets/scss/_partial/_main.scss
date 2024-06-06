@@ -106,6 +106,7 @@
     h1 {
       margin-bottom: 1rem;
     }
+
     .post-list {
       padding-bottom: 1rem;
       list-style: none;
@@ -283,6 +284,12 @@
 
     h3 {
       margin-top: 1rem;
+    }
+
+    .post-pagination {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
     }
 
     .see-also {

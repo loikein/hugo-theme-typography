@@ -122,12 +122,15 @@
     }
 
     &[open] summary {
-      padding-bottom: 5px;
       cursor: zoom-out;
     }
 
-    .markdown-inner :first-child {
-      padding-top: 0;
+    .markdown-inner {
+      padding-top: 5px;
+
+      :first-child {
+        padding-top: 0;
+      }
     }
   }
 

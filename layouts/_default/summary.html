@@ -2,6 +2,8 @@
   <a href="{{ .Permalink}}" title="{{ .Title }}">
     {{ .Title }}
   </a>
+  {{ if lt .Weight 0 }}<i class="fa fa-thumb-tack"></i>{{ end }}
+  {{ if .Draft }}<i class="fa fa-pencil"></i>{{ end }}
 </h2>
 <p class="list-tags">
   {{- if .Params.date -}}

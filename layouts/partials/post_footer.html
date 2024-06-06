@@ -1,22 +1,28 @@
 <footer class="post-footer">
-  {{ with .PrevInSection }}
-  <p>
-    {{ T "prev" | humanize }}&nbsp;<a class="previous" href="{{.Permalink}}">{{.Title}}</a>
-  </p>
+{{- /* Pagination */ -}}
+{{ if ne .Params._build.list "never"}}
+  <nav class="post-pagination">
+  {{ if .PrevInSection }}
+    <span>«{{ T "prev" | humanize }}&#32;<a class="previous" href="{{ .PrevInSection.Permalink }}">{{ .PrevInSection.Title }}</a></span>
+  {{ else }}
+    <span>«{{ T "prev" | humanize }}&#32;No older posts</span>
   {{ end }}
-  {{ with .NextInSection }}
-  <p>
-    {{ T "next" | humanize }}&nbsp;<a class="next" href="{{.Permalink}}">{{.Title}}</a>
-  </p>
+  {{ if .NextInSection }}
+    <span>»{{ T "next" | humanize }}&#32;<a class="next" href="{{ .NextInSection.Permalink}}">{{ .NextInSection.Title }}</a></span>
+  {{ else }}
+    <span>»{{ T "next" | humanize }}&#32;No newer posts</span>
   {{ end }}
-  <!-- 相关推荐 -->
-  {{ $related := .Site.RegularPages.Related . | first 5 }}
-  {{ with $related }}
-  <h3>{{T "seeAlso"}}</h3>
-  <ul class="see-also">
-    {{ range . }}
-    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-    {{ end }}
-  </ul>
-    {{ end }}
+  </nav>
+{{ end }}
+
+{{- /* Related */ -}}
+{{ $related := .Site.RegularPages.Related . | first 5 }}
+{{ with $related }}
+<h3>{{T "seeAlso"}}</h3>
+<ul class="see-also">
+  {{ range . }}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  {{ end }}
+</ul>
+{{ end }}
 </footer>

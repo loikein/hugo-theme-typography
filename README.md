@@ -18,6 +18,7 @@ Upstream:
 - [x] 增加了 example site。
 - [x] Valine 已经停止更新，换到 [Waline](https://waline.js.org/en/migration/valine.html)（但其实我也不用）
 - [x] Mobile footer
+- [ ] Pin posts to top (set `weight=-1` in front matter) (lacks `posts/section` implementation)
 - [ ] 目录设置
 
 ## Features
