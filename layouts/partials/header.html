@@ -1,11 +1,11 @@
-<div class="title vertical-text">
+<div class="site-title vertical-text">
 <a href="{{ .Site.BaseURL }}">
 <h3>{{ $.Site.Params.description }}</h3>
 <h2>{{ .Site.Title }}</h2>
 </a>
 </div>
 
-<ul class="nav">
+<ul class="site-nav" aria-label="Site navigation">
 {{ range .Site.Menus.main  }}
 <li><a href="{{ .URL }}">{{ .Name }}</a></li>
 {{ end }}

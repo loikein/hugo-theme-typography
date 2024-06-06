@@ -1,5 +1,5 @@
 .header-container {
-  .title {
+  .site-title {
     border-left: solid $global-font-color .125rem;
     padding-bottom: 4rem;
     font-style: normal;
@@ -40,7 +40,7 @@
     }
   }
 
-  .nav {
+  .site-nav {
     margin-top: 1rem;
     font-size: 1.1rem;
     font-weight: bolder;
@@ -70,7 +70,14 @@
     }
   }
 
-  .footer {
+  .site-footer {
+    margin: 1rem 0;
+    font-size: 0.8rem;
+    line-height: 2;
     display: block;
+
+    p {
+      margin: 0;
+    }
   }
 }
