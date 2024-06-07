@@ -67,9 +67,12 @@ enableGitInfo = false # use git commit log to generate lastmod record # 可根�
   CreateDate = "2024-06-01T02:36:49+0100"
   Description = 'Typography'
   copyright = '[BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)'
-
   Favicon = 'img/favicon.ico'
-  themeColor = "ocean"   # choose from: ocean (original), forest, misty, polka
+
+  themeColor = "ocean"
+  # choose from:
+  # light: ocean (original), forest, plum, misty, polka
+  # dark: velvet
 
   NoIndex = false
 

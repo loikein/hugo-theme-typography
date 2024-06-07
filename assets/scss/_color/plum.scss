@@ -1,0 +1,16 @@
+$global-font-color: #624E61;
+$global-background-size: 5px;
+
+@mixin body-background {
+  // https://projects.verou.me/css3patterns/#blueprint-grid
+  background-color: #fff;
+  background-image: linear-gradient($global-background-color 2px, transparent 2px),
+  linear-gradient(90deg, $global-background-color 2px, transparent 2px),
+  linear-gradient($global-background-color 1px, transparent 1px),
+  linear-gradient(90deg, $global-background-color 1px, transparent 1px);
+  background-size: 25*$global-background-size 25*$global-background-size,
+                   25*$global-background-size 25*$global-background-size,
+                   5*$global-background-size 5*$global-background-size,
+                   5*$global-background-size 5*$global-background-size;
+  background-position:-4px -4px, -4px -4px, -2px -2px, -2px -2px;
+}

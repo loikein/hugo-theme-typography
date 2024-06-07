@@ -117,6 +117,14 @@
     border-radius: 5px;
     padding: 5px;
 
+    @if (lightness($global-background-color) > 50%) {
+      // light themes
+    }
+    @else {
+      // dark themes
+      backdrop-filter: blur(20px);
+    }
+
     summary {
       cursor: zoom-in;
     }
