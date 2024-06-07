@@ -12,11 +12,14 @@
   }
 
   &:checked+.spoiler-inline {
+    // showing
     cursor: zoom-out;
+    user-select: none;
+    text-decoration: underline dotted;
   }
 
   &:not(:checked) {
-
+    // hiding
     +.spoiler-inline,
     +.spoiler-inline * {
       background: $global-font-color;

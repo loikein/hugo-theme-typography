@@ -1,0 +1,8 @@
+$global-font-color: #FAFFFD;
+$global-background-color: #042615;
+
+@mixin body-background {
+  // https://pattern.monster/diamonds-1/
+  background-color: #000;
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='50' height='50' patternTransform='scale(3) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='transparent'/><path d='M50 25L37.5 50 25 25 37.5 0zm-25 0L12.5 50 0 25 12.5 0z'  stroke-width='1' stroke='#{encodecolor($global-background-color)}' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>")
+}

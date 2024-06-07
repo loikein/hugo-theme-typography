@@ -72,7 +72,7 @@ enableGitInfo = false # use git commit log to generate lastmod record # 可根�
   themeColor = "ocean"
   # choose from:
   # light: ocean (original), forest, plum, misty, polka
-  # dark: velvet
+  # dark: velvet, idea, window, cocoa
 
   NoIndex = false
 
