@@ -37,3 +37,9 @@
 </script>
 
 {{ end }}
+{{- /* https://discourse.gohugo.io/t/how-to-check-if-the-site-is-on-localhost/1490/5 */ -}}
+{{ if eq (printf "%v" $.Site.BaseURL) "http://localhost:1313/" }}
+<section class="comment-container" id="comment-container" style="border:1px solid currentColor">
+This is the dummy comment section.
+</section>
+{{ end }}

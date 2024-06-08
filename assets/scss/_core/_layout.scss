@@ -3,23 +3,32 @@
   margin: 0 auto;
   display: flex;
   flex-direction: row;
+  gap: 1.5rem;
+  justify-content: space-between;
   position: relative;
   z-index: 9;
 
   .header-container {
     order: 1;
     flex-shrink: 0;
-    width: 18rem;
+    width: 15rem;
     position: sticky;
     height: 100%;
     top: 0;
     right: 0;
-    padding: 5rem 1rem;
+    padding: 5rem 0 5rem 1rem;
+
+    // flexbox experiment
+    // display: flex;
+    // flex-direction: column;
+    // align-items: flex-start;
+    // align-content: space-between;
   }
 
   #main {
     order: 0;
     width: 100%;
+    max-width: 80ch;
     padding: 5rem 1rem;
   }
 

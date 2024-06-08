@@ -1,7 +1,7 @@
 .header-container {
   .site-title {
     border-left: solid $global-font-color .125rem;
-    padding-bottom: 4rem;
+    padding-bottom: 3rem;
     font-style: normal;
     transition: padding .5s ease 0s, background-color .5s ease 0s;
     background-color: transparent;
@@ -71,7 +71,7 @@
   }
 
   .site-footer {
-    margin: 1rem 0;
+    margin: 1rem 0 0 0;
     font-size: 0.8rem;
     line-height: 2;
     display: block;

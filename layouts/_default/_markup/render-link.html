@@ -1,0 +1,7 @@
+<a href="{{ .Destination | safeURL }}"
+{{- with .Title }} title="{{ . }}"{{ end -}}
+>
+{{- with .Text | safeHTML }}{{ . }}{{ end -}}
+</a>
+{{- /* <i class="fa fa-external-link" aria-hidden="true"></i> */ -}}
+{{- /* chomp trailing newline */ -}}

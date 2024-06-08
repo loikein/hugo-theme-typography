@@ -1,0 +1,58 @@
+{{- /*
+https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/pagination.html
+*/ -}}
+
+{{- $msg1 := "When passing a map to the internal pagination template, one of the elements must be named 'page', and it must be set to the context of the current page." }}
+
+{{- $page := . -}}
+
+{{- if reflect.IsMap . }}
+  {{- with .page }}
+    {{- $page = . }}
+  {{- else }}
+    {{- errorf $msg1 }}
+  {{- end }}
+{{- end -}}
+
+{{- if gt $page.Paginator.TotalPages 1 }}
+  <nav class="pagination section-pagination">
+    {{- block "pagination" $page }}{{ end -}}
+  </nav>
+{{- end -}}
+
+{{- define "pagination" }}
+{{- with .Paginator }}
+  {{- $currentPageNumber := .PageNumber }}
+  <span>
+  {{- with .First }}
+    {{- if ne $currentPageNumber .PageNumber }}
+    <span class="page-item">&laquo;&laquo;&#32;<a class="page-link" aria-label="First" href="{{ .URL }}">{{ T "firstPage" | humanize }}</a></span>
+    {{- else }}
+    <span class="page-item disabled" title="At first page"></span>
+    {{- end }}
+  {{- end }}
+
+  {{- with .Prev }}
+    <span class="page-item">&laquo;&#32;<a class="page-link" aria-label="Previous" href="{{ .URL }}">{{ T "prevPage" | humanize }}</a></span>
+  {{- else }}
+    <span class="page-item disabled" title="No previous page"></span>
+  {{- end }}
+  </span>
+  <span class="page-item">第 {{ $currentPageNumber }} 页／共 {{ .TotalPages }} 页</span>
+  <span>
+  {{- with .Next }}
+    <span class="page-item"><a class="page-link" aria-label="Next" href="{{ .URL }}">{{ T "nextPage" | humanize }}</a>&#32;&raquo;</span>
+  {{- else }}
+    <span class="page-item disabled" title="No next page"></span>
+  {{- end }}
+
+  {{- with .Last }}
+    {{- if ne $currentPageNumber .PageNumber }}
+    <span class="page-item"><a class="page-link" aria-label="Last" href="{{ .URL }}">{{ T "lastPage" | humanize }}</a>&#32;&raquo;&raquo;</span>
+    {{- else }}
+    <span class="page-item disabled" title="At last page"></span>
+    {{- end }}
+  {{- end }}
+  </span>
+{{- end }}
+{{- end -}}

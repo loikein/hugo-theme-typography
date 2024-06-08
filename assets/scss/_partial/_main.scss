@@ -103,14 +103,17 @@
     }
 
     .post-list {
-      padding-bottom: 1rem;
+      padding: 0;
       list-style: none;
       padding-inline-start: 0;
-      margin: 0;
+      margin-bottom: 3rem;
 
       li {
         margin-bottom: 1rem;
 
+        :last-child {
+          margin-bottom: 0;
+        }
         h2 {
           margin: 0;
         }
@@ -153,6 +156,8 @@
   }
 
   .post-container {
+    margin-bottom: 3rem;
+
     &>h1 {
       font-weight: 700;
       font-size: 1.8rem;
@@ -271,7 +276,8 @@
   }
 
   .post-footer {
-    margin-bottom: 3rem;
+    // moved to comment in case there is no comment
+    // margin-bottom: 3rem;
 
     h3 {
       margin-top: 1rem;
@@ -293,6 +299,6 @@
   }
 
   .main-comment {
-    //
+    margin-top: 3rem;
   }
 }

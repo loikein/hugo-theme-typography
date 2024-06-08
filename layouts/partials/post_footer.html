@@ -1,16 +1,16 @@
 <footer class="post-footer">
 {{- /* Pagination */ -}}
 {{ if ne .Params._build.list "never"}}
-  <nav class="post-pagination">
-  {{ if .PrevInSection }}
-    <span>«{{ T "prev" | humanize }}&#32;<a class="previous" href="{{ .PrevInSection.Permalink }}">{{ .PrevInSection.Title }}</a></span>
+  <nav class="pagination post-pagination">
+  {{ with .PrevInSection }}
+    <span>&laquo;&#32;{{ T "prev" | humanize }}&#32;<a class="previous" href="{{ .Permalink }}">{{ .Title }}</a></span>
   {{ else }}
-    <span>«{{ T "prev" | humanize }}&#32;No older posts</span>
+    <span title="No older post"></span>
   {{ end }}
-  {{ if .NextInSection }}
-    <span>»{{ T "next" | humanize }}&#32;<a class="next" href="{{ .NextInSection.Permalink}}">{{ .NextInSection.Title }}</a></span>
+  {{ with .NextInSection }}
+    <span>{{ T "next" | humanize }}&#32;<a class="next" href="{{ .Permalink}}">{{ .Title }}</a>&#32;&raquo;</span>
   {{ else }}
-    <span>»{{ T "next" | humanize }}&#32;No newer posts</span>
+    <span title="No newer post"></span>
   {{ end }}
   </nav>
 {{ end }}

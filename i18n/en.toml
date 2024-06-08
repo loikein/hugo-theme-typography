@@ -32,7 +32,18 @@ other = "about"
 # === Pagination ===
 [More]
 other = "More"
-# === Pagination ===
+
+[prevPage]
+other = "Previous"
+
+[nextPage]
+other = "Next"
+
+[firstPage]
+other = "First"
+
+[lastPage]
+other = "Last"
 
 # === partials/comments.html ===
 [valineLang]
