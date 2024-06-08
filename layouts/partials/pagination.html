@@ -38,7 +38,7 @@ https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/pagi
     <span class="page-item disabled" title="No previous page"></span>
   {{- end }}
   </span>
-  <span class="page-item">第 {{ $currentPageNumber }} 页／共 {{ .TotalPages }} 页</span>
+  <span class="page-item">{{ T "currentPage" $currentPageNumber }}&#32;&#x002F;&#32;{{ T "totalPage" .TotalPages }}</span>
   <span>
   {{- with .Next }}
     <span class="page-item"><a class="page-link" aria-label="Next" href="{{ .URL }}">{{ T "nextPage" | humanize }}</a>&#32;&raquo;</span>

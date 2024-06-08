@@ -89,6 +89,12 @@ other = "分类"
 [More]
 other = "更多"
 
+[currentPage]
+other = "第 {{ . }} 页"
+
+[totalPage]
+other = "共 {{ . }} 页"
+
 [prevPage]
 other = "上一页"
 
