@@ -1,5 +1,5 @@
 {{ define "main_content" }}
-<section class="post-archive-detail">
+<section class="post-archive-detail" data-pagefind-ignore>
   <h1 class="path-title">{{ .Title }}<span>({{ len .Pages }})</span></h1>
   <ul class="post-list">
     {{ $paginator := .Paginate .Pages }}

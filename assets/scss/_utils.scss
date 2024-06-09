@@ -4,6 +4,17 @@
   outline-color: -webkit-focus-ring-color;
 }
 
+@mixin font-on-background {
+  @if (lightness($global-background-color) > 50%) {
+    // light themes
+    color: #fff;
+  }
+  @else {
+    // dark themes
+    color: #000;
+  }
+}
+
 .vertical-text {
   -webkit-writing-mode: vertical-rl;
   -ms-writing-mode: tb-rl;

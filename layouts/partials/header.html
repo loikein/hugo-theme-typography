@@ -11,6 +11,15 @@
 {{ end }}
 </ul>
 
+<div class="site-function">
+{{ if ne .Site.Params.search false }}
+  <a href="/search/" title="search"><i class="fa fa-search" aria-hidden="true"></i></a>
+{{ end }}
+{{- with .Site.GetPage "/" }}{{ with .OutputFormats.Get "RSS" }}
+  <a href="{{ .Permalink }}" target="_blank" aria-label="RSS"><i class="fa fa-rss" aria-hidden="true"></i></a>
+{{ end }}{{ end }}
+</div>
+
 {{ if .Site.Social }}
 <div class="social" >
 {{ with .Site.Social.twitter }}

@@ -70,10 +70,14 @@
 <meta name="twitter:description" content="{{ .Site.Params.Description }}">
 {{ end }}
 
-{{ with .OutputFormats.Get "RSS" }}
-<link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Title }}" />
-<link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Title }}" />
-{{ end }}
+{{- /*
+https://discourse.gohugo.io/t/link-to-rss-feed-on-all-pages-using-outputformats/11598/7
+*/ -}}
+{{- with .Site.GetPage "/" }}
+{{- range .OutputFormats }}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{- end }}
+{{- end }}
 
 {{/*
 {{ if .Site.Params.MathJax }}

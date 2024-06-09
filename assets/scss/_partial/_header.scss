@@ -50,7 +50,7 @@
   }
 
   .site-nav {
-    margin-top: 1rem;
+    margin: 1rem 0 0 0;
     font-size: 1.1rem;
     font-weight: bolder;
     font-style: normal;
@@ -62,19 +62,22 @@
     }
   }
 
+  .site-function,
   .social {
+    margin: 1rem 0 0 0;
     font-size: 1.4rem;
     line-height: 1;
 
     a {
+      text-decoration: none;
+      box-shadow: none;
       border: none;
-      padding: 0;
+      padding: 0 1px;
 
       &:hover,
       &:focus {
-        color: $global-font-color;
-        background-color: $global-background-color;
-        border-bottom: solid transparent 0.125rem;
+        color: $global-background-color;
+        background-color: $global-font-color;
       }
     }
   }

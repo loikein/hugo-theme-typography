@@ -20,16 +20,7 @@
   &:checked+.spoiler-inline {
     // showing
     cursor: zoom-out;
-
-    @if (lightness($global-background-color) > 50%) {
-      // light themes, on dark colour
-      color: #fff;
-    }
-
-    @else {
-      // dark themes, on light colour
-      color: #000;
-    }
+    @include font-on-background;
   }
 
   &:not(:checked) {

@@ -29,6 +29,9 @@ Upstream:
     - Disqus
     - Gitalk
     - Waline
+- Site-wide search with Pagefind
+    - Extra configurations are needed in order to use this feature. See [Pagefind | loikein's wiki](https://wiki.loikein.one/programming/web/static-site/pagefind/) for more details.
+    - Setting `[params] search=false` to turn off search completely.
 
 ## Config
 
@@ -67,5 +70,6 @@ Ref: [Params | Hugo](https://gohugo.io/methods/site/params/)
 
 TBE.
 
+- `search`: `true` to activate the Pagefind search page.
 - `NoIndex`: `true` to prevent showing up in Google SERP (site-wide)
     - DO NOT set `enableRobotsTXT` if you want to use this option

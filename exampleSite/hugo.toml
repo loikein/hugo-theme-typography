@@ -74,6 +74,7 @@ enableGitInfo = false # use git commit log to generate lastmod record # 可根�
   # light: ocean (original), forest, plum, misty, polka
   # dark: velvet, idea, window, cocoa
 
+  search = true
   NoIndex = false
 
   DateFormat = '2006-01-02'

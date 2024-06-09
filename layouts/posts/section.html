@@ -2,7 +2,7 @@
 {{/*
 Goal: to make this the same structure as default section.html
 */}}
-<section class="post-archive-list">
+<section class="post-archive-list" data-pagefind-ignore>
   <h1 class="path-title">{{ .Title }}<span>({{ len .Pages }})</span></h1>
   {{ range (.Paginate (.Pages.GroupByDate "2006") (index .Site.Params.Archive.page | default 20) ).PageGroups  }}
   <section class="post-list">

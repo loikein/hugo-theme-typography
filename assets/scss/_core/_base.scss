@@ -27,14 +27,7 @@ body {
 }
 
 ::selection {
-  @if (lightness($global-background-color) > 50%) {
-    // light themes
-    color: #fff;
-  }
-  @else {
-    // dark themes
-    color: #000;
-  }
+  @include font-on-background;
   background-color: rgba($global-font-color, .75);
 }
 
@@ -58,10 +51,11 @@ a {
   &:hover,
   &:focus {
     text-decoration: none;
-    color: $global-background-color;
-    // background-color: $global-font-color;
+    @include font-on-background;
+    background-color: $global-font-color;
+
     // border-bottom: solid transparent 0.125rem;
-    box-shadow: inset 0 -40px 0 -1px $global-font-color;
+    // box-shadow: inset 0 -40px 0 -1px $global-font-color;
   }
 }
 

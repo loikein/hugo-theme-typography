@@ -14,10 +14,10 @@ tags = [
   "responsive",
 ]
 features = [
-  "pjax",
   "pagination",
   "social-menu",
   "syntax-highlighting",
+  "search",
 ]
 min_version = "0.115.0"
 

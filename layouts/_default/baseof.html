@@ -10,7 +10,7 @@
     {{ partial "header.html" . }}
     {{ partialCached "footer.html" . }}
   </header>
-  <main id="main">
+  <main id="main" data-pagefind-body>
   {{ block "main_content" . }}{{ end }}
   </main>
   <div class="footer-container-mobile">{{ partialCached "footer.html" . }}</div>

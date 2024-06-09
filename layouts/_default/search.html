@@ -1,0 +1,47 @@
+{{ define "main_content" }}
+{{ if eq .Site.Params.search false }}{{- /* no search */ -}}
+<h1>
+  <a href="{{ .Permalink}}" title="{{ .Title }}">
+    {{ .Title }}
+  </a>
+</h1>
+
+<article class="post-content">
+<p>
+You need to set <code>search = true</code> in <code>hugo.toml</code>,
+or <code>search: true</code> in <code>hugo.yaml</code>
+to use this feature.
+</p>
+<p>Read the <a href="https://github.com/loikein/hugo-theme-typography/blob/main/README.md">README file</a> of this theme for more details.</p>
+</article>
+{{ else }}{{- /* use search */ -}}
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+
+<section class="post-container">
+<h1>
+  <a href="{{ .Permalink}}" title="{{ .Title }}">
+    {{ .Title }}
+  </a>
+</h1>
+
+{{ with .Content }}
+<article class="post-content">{{ . }}</article>
+{{ end }}
+
+<div id="search--input"></div>
+</section>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({
+          element: "#search--input",
+          showSubResults: true,
+          // showImages: false,
+          resetStyles: false,
+          excerptLength: 30,
+        });
+    });
+</script>
+{{ end }}
+{{ end }}
