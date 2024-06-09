@@ -5,7 +5,7 @@
 </a>
 </div>
 
-<ul class="site-nav" aria-label="Site navigation">
+<ul class="site-nav" role="navigation" aria-label="Site">
 {{ range .Site.Menus.main  }}
 <li><a href="{{ .URL }}">{{ .Name }}</a></li>
 {{ end }}

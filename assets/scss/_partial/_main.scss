@@ -1,4 +1,35 @@
 #main {
+  details {
+    border-radius: 5px;
+    padding: 5px;
+    background: rgba($global-font-color, .1);
+
+    @if (lightness($global-background-color) > 50%) {
+      // light themes
+    }
+
+    @else {
+      // dark themes
+      backdrop-filter: blur(20px);
+    }
+
+    summary {
+      cursor: zoom-in;
+    }
+
+    &[open] summary {
+      cursor: zoom-out;
+    }
+
+    .markdown-inner {
+      padding-top: 5px;
+
+      :first-child {
+        padding-top: 0;
+      }
+    }
+  }
+
   figure {
     transition: all 0.6s;
 
@@ -114,6 +145,7 @@
         :last-child {
           margin-bottom: 0;
         }
+
         h2 {
           margin: 0;
         }
@@ -276,9 +308,9 @@
   }
 
   .post-footer {
+
     // moved to comment in case there is no comment
     // margin-bottom: 3rem;
-
     h3 {
       margin-top: 1rem;
     }

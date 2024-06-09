@@ -1,4 +1,5 @@
 <h{{ .Level }} id="{{ .Anchor }}">
 {{- .Text | safeHTML -}}
-<a class="anchor" href="#{{ .Anchor }}">#</a>
+<a class="anchor" aria-hidden="true" href="#{{ .Anchor }}">#</a>{{- /**/ -}}
 </h{{ .Level }}>
+{{- /**/ -}}

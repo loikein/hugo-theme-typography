@@ -1,0 +1,49 @@
+{{- /*
+Original file:
+https://github.com/AmazingRise/hugo-theme-diary/blob/main/layouts/partials/toc.html
+Distributed under: MIT License Copyright (c) 2019 Rise
+Original license: https://github.com/AmazingRise/hugo-theme-diary/blob/main/LICENSE
+Re-distributed (with modifications) under: MIT License Copyright (c) 2024 loikein
+License: https://github.com/loikein/hugo-theme-typography/blob/main/LICENSE
+*/ -}}
+
+{{- $headings := findRE `(?is)<h\d.*?</h\d>` .Content }}
+{{ if ge (len $headings) 2 }}{{- /* Do not create TOC if only gets one heading */ -}}
+<details class="toc" role="navigation" aria-label="Page">
+{{- $h1_n := len (findRE "(.|\n])+?" .Content) }}{{- /* ignore empty links with + */ -}}
+{{- $re := (cond (eq $h1_n 0) `<h[2-4]` `<h[1-4]`) }}
+{{- $renum := (cond (eq $h1_n 0) `[2-4]` `[1-4]`) }}
+<summary class="toc-title">{{ or (T "toc") "Table of contents" | safeHTML }}</summary>
+{{- $scratch := newScratch }}
+{{- $scratch.Set "prev_heading" 2 }}{{- /* Control starting level */}}
+<ul class="markdown-inner toc-content">
+{{ range $headings }}
+  {{ $heading := . }}
+  {{ range first 1 (findRE $re $heading 1) }}
+    {{ range findRE $renum . 1 }}
+      {{ $next_heading := (cond (eq $h1_n 0) (sub (int .) 1 ) (int . ) ) }}
+      {{ $prev_heading := $scratch.Get "prev_heading"}}
+      {{ if lt $next_heading $prev_heading }}
+        {{ range seq (sub $prev_heading $next_heading) }}
+          </ul>
+        {{ end }}
+      {{ end }}
+      {{ if gt $next_heading $prev_heading }}
+        {{ range seq (sub $next_heading $prev_heading) }}
+          {{ if site.Params.enableAutoCollapse }}
+            <ul class="collapse" data-toggle="collapse">
+          {{ else }}
+            <ul>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+      {{- $anchorId := (replaceRE `(?is).* id="(.*?)".*` "$1" $heading ) }}
+      {{- $title := $heading | plainify | strings.TrimSuffix "#" | htmlUnescape }}{{/* Remove anchor indicator as defined in layouts/_default/_markup/render-link.html */}}
+      <li><a href="#{{ $anchorId }}">{{ $title }}</a></li>
+      {{ $scratch.Set "prev_heading" $next_heading }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+</ul>
+</details>
+{{ end }}

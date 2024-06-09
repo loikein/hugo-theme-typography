@@ -130,37 +130,6 @@
     padding-left: .5em
   }
 
-  details {
-    border-radius: 5px;
-    padding: 5px;
-    background: rgba($global-font-color, .1);
-
-    @if (lightness($global-background-color) > 50%) {
-      // light themes
-    }
-
-    @else {
-      // dark themes
-      backdrop-filter: blur(20px);
-    }
-
-    summary {
-      cursor: zoom-in;
-    }
-
-    &[open] summary {
-      cursor: zoom-out;
-    }
-
-    .markdown-inner {
-      padding-top: 5px;
-
-      :first-child {
-        padding-top: 0;
-      }
-    }
-  }
-
   ul,
   ol {
     padding-left: 2em;

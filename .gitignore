@@ -6,3 +6,4 @@ exampleSite/public/
 _gen/
 
 *drafts.scss
+toc-parse-content.html
