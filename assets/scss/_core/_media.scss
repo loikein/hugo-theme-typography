@@ -37,15 +37,17 @@
 @media only screen and (max-width: 48rem) {
   .main-container {
     flex-direction: column;
+    // gap:
 
     .header-container {
       order: 0;
       position: relative;
       margin: 0 auto;
-      padding: 0;
+      padding: 2rem 1rem 0 1rem;
       padding-top: 2rem;
       text-align: center;
       display: block;
+      width: auto;
 
       .site-title {
         border: none;
@@ -91,7 +93,7 @@
     }
 
     #main {
-      padding: 1rem;
+      padding: 0 1rem;
       width: auto;
     }
   }

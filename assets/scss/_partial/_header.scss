@@ -13,14 +13,11 @@
     flex-grow: 1;
     flex-basis: calc(100% - 30rem);
 
-    &:hover,
-    &:focus {
+    &:hover {
       padding: 1rem 0 3rem 0;
-      color: $global-background-color;
       background-color: $global-font-color;
 
       * {
-        color: $global-background-color;
         background-color: transparent;
       }
     }
@@ -29,6 +26,12 @@
       border: none;
       box-shadow: none;
       display: inline-block;
+
+      &:focus,
+      &:active {
+        color: $global-background-color;
+        background-color: $global-font-color;
+      }
 
       h2 {
         font-size: 2rem;
