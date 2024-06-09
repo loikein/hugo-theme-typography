@@ -11,20 +11,33 @@
     @include outline;
   }
 
+  +.spoiler-inline,
+  +.spoiler-inline * {
+    background: $global-font-color;
+    user-select: none;
+  }
+
   &:checked+.spoiler-inline {
     // showing
     cursor: zoom-out;
-    user-select: none;
-    text-decoration: underline dotted;
+
+    @if (lightness($global-background-color) > 50%) {
+      // light themes, on dark colour
+      color: #fff;
+    }
+
+    @else {
+      // dark themes, on light colour
+      color: #000;
+    }
   }
 
   &:not(:checked) {
+
     // hiding
     +.spoiler-inline,
     +.spoiler-inline * {
-      background: $global-font-color;
       color: transparent;
-      user-select: none;
       cursor: zoom-in;
     }
 
