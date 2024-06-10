@@ -2,19 +2,23 @@
   details {
     border-radius: 5px;
     padding: 5px;
-    background: rgba($global-font-color, .1);
 
     @if (lightness($global-background-color) > 50%) {
       // light themes
+      background: rgba($global-font-color, .1);
     }
 
     @else {
       // dark themes
+      background: rgba($global-font-color, .2);
       backdrop-filter: blur(20px);
     }
 
     summary {
       cursor: zoom-in;
+      padding-left: 22px;
+      text-indent: -22px;
+      // https://www.thesitewizard.com/css/hanging-indents.shtml
     }
 
     &[open] summary {
@@ -187,6 +191,12 @@
     }
   }
 
+  .toc {
+    ul li {
+      margin: .5em 0;
+    }
+  }
+
   .post-container {
     margin-bottom: 3rem;
 
@@ -331,6 +341,9 @@
   }
 
   .main-comment {
-    margin-top: 3rem;
+    .comment-container {
+      // Do not use if there is no comment
+      margin-top: 3rem;
+    }
   }
 }

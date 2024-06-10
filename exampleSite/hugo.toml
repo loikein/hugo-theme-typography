@@ -67,7 +67,7 @@ enableGitInfo = false # use git commit log to generate lastmod record # 可根�
   CreateDate = "2024-06-01T02:36:49+0100"
   Description = 'Typography'
   copyright = '[BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)'
-  Favicon = 'img/favicon.ico'
+  Favicon = 'favicon.ico'
 
   themeColor = "ocean"
   # choose from:
@@ -101,7 +101,7 @@ enableGitInfo = false # use git commit log to generate lastmod record # 可根�
   #   distractionFreeMode = false
 
   [Params.Archive]
-    page = 20
+    page = 20   # number of posts per page in condensed archive (list) layout
 
 [Menu]
   [[Menu.Main]]

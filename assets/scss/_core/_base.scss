@@ -28,7 +28,17 @@ body {
 
 ::selection {
   @include font-on-background;
-  background-color: rgba($global-font-color, .75);
+
+  @if (lightness($global-background-color) > 50%) {
+    // light themes
+    background-color: rgba($global-font-color, .75);
+  }
+
+  @else {
+    // dark themes
+    background-color: rgba($global-font-color, .8);
+  }
+
 }
 
 :focus {

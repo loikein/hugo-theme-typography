@@ -1,5 +1,5 @@
 {{ define "main_content" }}
-<section class="post-archive-detail">
+<section class="post-archive-detail" data-pagefind-ignore>
   <ul class="post-list">
     {{ $pages := where .Site.RegularPages "Type" "in" site.Params.mainSections }}
     {{ $paginator := .Paginate $pages}}

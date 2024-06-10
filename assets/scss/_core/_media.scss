@@ -37,7 +37,6 @@
 @media only screen and (max-width: 48rem) {
   .main-container {
     flex-direction: column;
-    // gap:
 
     .header-container {
       order: 0;
@@ -69,10 +68,12 @@
 
         h2 {
           font-size: 2rem;
+          max-inline-size: unset;
         }
 
         h3 {
           font-size: 1rem;
+          max-inline-size: unset;
         }
       }
 
