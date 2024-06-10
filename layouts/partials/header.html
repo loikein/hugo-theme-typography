@@ -6,15 +6,24 @@
 </div>
 
 <ul class="site-nav" role="navigation" aria-label="Site">
-{{ range .Site.Menus.main  }}
-<li><a href="{{ .URL }}">{{ .Name }}</a></li>
-{{ end }}
+{{- $currentPage := $.RelPermalink | absLangURL -}}
+{{- range site.Menus.main }}
+  {{- $actived := false -}}
+  {{- if hasPrefix  $currentPage (.URL | absLangURL) -}}
+    {{- $actived = true -}}
+  {{- end -}}
+  {{- if $actived }}
+    <li><a class="is-active" aria-current="page" href="{{ .URL }}">{{ .Name }}</a></li>
+  {{- else }}
+    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+  {{- end }}
+{{- end }}
 </ul>
 
 <div class="site-function">
-{{ if ne .Site.Params.search false }}
+{{- if ne .Site.Params.search false }}
   <a href="/search/" title="search"><i class="fa fa-search" aria-hidden="true"></i></a>
-{{ end }}
+{{- end }}
 {{- with .Site.GetPage "/" }}{{ with .OutputFormats.Get "RSS" }}
   <a href="{{ .Permalink }}" target="_blank" aria-label="RSS"><i class="fa fa-rss" aria-hidden="true"></i></a>
 {{ end }}{{ end }}

@@ -104,31 +104,27 @@ enableGitInfo = false # use git commit log to generate lastmod record # 可根�
     page = 20   # number of posts per page in condensed archive (list) layout
 
 [Menu]
-  [[Menu.Main]]
-    Name = 'home'
-    identifier = "home"
-    # post = "<span class='alert'>New!</span>"
-    # pre = "home"
-    URL = '/'
-    weight = 1
+  # [[Menu.Main]]
+  #   Name = 'home'
+  #   identifier = "home"
+  #   # pre = "home"
+  #   URL = '/'
+  #   weight = 1
   [[Menu.Main]]
     Name = 'archive'
     identifier = "archive"
-    # post = "<span class='alert'>New!</span>"
     # pre = "archive"
     URL = '/posts/'
     weight = 2
   [[Menu.Main]]
     Name = 'notes'
     identifier = "notes"
-    # post = "<span class='alert'>New!</span>"
     # pre = "sticky-note"
     URL = '/notes/'
     weight = 3
   [[Menu.Main]]
     Name = 'photos'
     identifier = "photos"
-    # post = "<span class='alert'>New!</span>"
     # pre = "photo"
     URL = '/photos/'
     weight = 4
@@ -145,7 +141,6 @@ enableGitInfo = false # use git commit log to generate lastmod record # 可根�
   [[Menu.Main]]
     Name = 'about'
     identifier = "about"
-    # post = "<span class='alert'>New!</span>"
     # pre = "user"
     URL = '/about/'
     weight = 7

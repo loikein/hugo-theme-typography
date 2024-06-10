@@ -62,6 +62,11 @@
     li {
       margin: .5rem 0;
       list-style: none;
+
+      a.is-active {
+        @include font-on-background;
+        background-color: $global-font-color;
+      }
     }
   }
 
