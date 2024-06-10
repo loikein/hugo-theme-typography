@@ -2,16 +2,19 @@
 {{/*
 Goal: to make this the same structure as default section.html
 */}}
-<section class="post-archive-list" data-pagefind-ignore>
-  <h1 class="path-title">{{ .Title }}<span>({{ len .Pages }})</span></h1>
+<section class="post-archive post-archive--simple" data-pagefind-ignore>
+  <h1 class="path-title">{{ .Title }}<span>&#32;({{ len .Pages }})</span></h1>
   {{ range (.Paginate (.Pages.GroupByDate "2006") (index .Site.Params.Archive.page | default 20) ).PageGroups  }}
-  <section class="post-list">
-    <h2>{{ .Key }}</h2>
-    <ul>
+  <section>{{- /* Yearly list */ -}}
+    <h2>{{ .Key }}</h2>{{- /* Year */ -}}
+    <ul class="post-list post-list--simple">
       {{ range .Pages }}
       <li>
-        <span>{{ .Date.Format "01-02" }}</span><a href="{{ .Permalink }}">{{ .Title }}</a>
-        {{- if .Draft -}}&#32;<i class="fa fa-pencil"></i>{{- end -}}
+        <h3 class="post-list__title">
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+          {{- if lt .Weight 0 -}}&#32;<i class="fa fa-thumb-tack"></i>{{- end -}}
+          {{- if .Draft -}}&#32;<i class="fa fa-pencil"></i>{{- end -}}</h3>
+        <span class="post-list__detail">{{ .Date.Format "01-02" }}</span>
       </li>
       {{ end }}
     </ul>

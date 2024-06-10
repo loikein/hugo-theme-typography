@@ -1,0 +1,56 @@
+.path-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.post-archive {
+  h1 {
+    margin-bottom: 1rem;
+  }
+}
+
+.post-archive--simple {
+  h2 {
+    margin: 1rem 0 0 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+}
+
+.post-list {
+  list-style: none;
+}
+
+.post-list--detail {
+  padding: 0;
+  padding-inline-start: 0;
+  margin: 0 0 3rem 0;
+
+  li {
+    margin-bottom: 1rem;
+
+    :last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin: 0;
+    }
+  }
+}
+
+.post-list--simple {
+  padding-left: 2rem;
+  margin: 0 0 1rem 0;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem 0;
+
+    h3 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+  }
+}
