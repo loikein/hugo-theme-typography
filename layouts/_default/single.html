@@ -1,9 +1,8 @@
 {{ define "main_content" }}
 <section class="post-container">
 <h1>
-  <a href="{{ .Permalink}}" title="{{ .Title }}">
-    {{ .Title }}
-  </a>
+  <a href="{{ .Permalink}}" title="{{ .Title }}">{{ .Title }}</a>
+  {{- if .Draft -}}&#32;<i class="fa fa-pencil"></i>{{- end -}}
 </h1>
 <p class="list-tags">
   <!-- <span>

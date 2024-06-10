@@ -45,17 +45,14 @@
       text-decoration: none;
       box-shadow: none;
       user-select: none;
-
-      &:hover,
-      &:focus {
-        opacity: .5;
-        color: $global-font-color;
-      }
     }
 
-    &:hover a.anchor {
-      opacity: .7;
+    &:hover a.anchor,
+    a.anchor:hover,
+    a.anchor:focus {
+      opacity: .5;
       color: $global-font-color;
+      background: none;
     }
   }
 

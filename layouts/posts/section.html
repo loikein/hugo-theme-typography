@@ -11,6 +11,7 @@ Goal: to make this the same structure as default section.html
       {{ range .Pages }}
       <li>
         <span>{{ .Date.Format "01-02" }}</span><a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{- if .Draft -}}&#32;<i class="fa fa-pencil"></i>{{- end -}}
       </li>
       {{ end }}
     </ul>
