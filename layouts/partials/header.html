@@ -8,10 +8,7 @@
 <ul class="site-nav" role="navigation" aria-label="Site">
 {{- $currentPage := $.RelPermalink | absLangURL -}}
 {{- range site.Menus.main }}
-  {{- $actived := false -}}
-  {{- if hasPrefix  $currentPage (.URL | absLangURL) -}}
-    {{- $actived = true -}}
-  {{- end -}}
+  {{- $actived := (hasPrefix  $currentPage (.URL | absLangURL)) -}}
   {{- if $actived }}
     <li><a class="is-active" aria-current="page" href="{{ .URL }}">{{ .Name }}</a></li>
   {{- else }}
@@ -30,7 +27,7 @@
 </div>
 
 {{ if .Site.Social }}
-<div class="social" >
+<div class="social">
 {{ with .Site.Social.twitter }}
   <a href="https://twitter.com/{{ . }}" target="_blank" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 {{ end }}
