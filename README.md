@@ -21,7 +21,7 @@ Upstream:
 - [x] 新增了 Mobile footer
 - [x] 新增了文章列表和文章内的翻页样式
 - [x] 修改了 TOC 的样式
-- [ ] Pin posts to top (set `weight=-1` in front matter) (lacks `posts/section` implementation)
+- [x] Pin posts to top (set `weight=-1` in front matter)
 - [ ] Code block style
 - [ ] menu config
 - [ ] (?) Light/dark mode switcher

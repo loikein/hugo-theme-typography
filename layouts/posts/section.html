@@ -1,25 +1,55 @@
 {{ define "main_content" }}
-{{/*
-Goal: to make this the same structure as default section.html
-*/}}
+{{- /*
+
+List pinned/not pinned posts separately.
+
+Con: the pinned post will show up in every paginated page.
+
+Helper
+------
+{{ printf "%#v" . }}
+
+*/ -}}
 <section class="post-archive post-archive--simple" data-pagefind-ignore>
-  <h1 class="path-title">{{ .Title }}<span>&#32;({{ len .Pages }})</span></h1>
-  {{ range (.Paginate (.Pages.GroupByDate "2006") (index .Site.Params.Archive.page | default 20) ).PageGroups  }}
-  <section>{{- /* Yearly list */ -}}
-    <h2>{{ .Key }}</h2>{{- /* Year */ -}}
-    <ul class="post-list post-list--simple">
-      {{ range .Pages }}
-      <li>
-        <h3 class="post-list__title">
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-          {{- if lt .Weight 0 -}}&#32;<i class="fa fa-thumb-tack"></i>{{- end -}}
-          {{- if .Draft -}}&#32;<i class="fa fa-pencil"></i>{{- end -}}</h3>
-        <span class="post-list__detail">{{ .Date.Format "01-02" }}</span>
-      </li>
-      {{ end }}
-    </ul>
-  </section>
-  {{ end }}
+<h1 class="path-title">{{ .Title }}<span>&#32;({{ len .Pages }})</span></h1>
+
+{{- $pinned    := where .Pages "Weight" "lt" 0 -}}
+{{- $unpinned  := where .Pages "Weight" "ge" 0 -}}
+{{- $paginator := .Paginate $unpinned (index .Site.Params.Archive.page | default 20) -}}
+
+{{- if gt $pinned.Len 0 }}{{- /* Pinned list */ -}}
+<section>
+  <h2>{{ T "pinnedPosts" }}</h2>
+  <ul class="post-list post-list--simple">
+  {{- range $pinned }}
+    <li>
+      <h3 class="post-list__title">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{- if lt .Weight 0 -}}&#32;<i class="fa fa-thumb-tack"></i>{{- end -}}
+        {{- if .Draft -}}&#32;<i class="fa fa-pencil"></i>{{- end -}}</h3>
+      <span class="post-list__detail">{{ .Date.Format "01-02" }}</span>
+    </li>
+  {{- end }}
+  </ul>
 </section>
+{{- end }}
+
+{{- range $paginator.Pages.GroupByDate "2006" }}{{- /* Yearly list */ -}}
+<section>
+  <h2>{{ .Key }}</h2>{{- /* Year */ -}}
+  <ul class="post-list post-list--simple">
+    {{- range .Pages }}
+    <li>
+      <h3 class="post-list__title">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{- if lt .Weight 0 -}}&#32;<i class="fa fa-thumb-tack"></i>{{- end -}}
+        {{- if .Draft -}}&#32;<i class="fa fa-pencil"></i>{{- end -}}</h3>
+      <span class="post-list__detail">{{ .Date.Format "01-02" }}</span>
+    </li>
+    {{- end }}
+  </ul>
+</section>
+{{- end }}
+
 {{ partial "pagination" . }}
 {{ end }}

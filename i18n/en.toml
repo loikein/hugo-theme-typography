@@ -6,6 +6,11 @@
 other = "Posts"
 # === Post ===
 
+# === Section ===
+[pinnedPosts]
+other = "Pinned entries"
+# === Section ===
+
 # === Taxonomy ===
 [all]
 other = "all "
@@ -17,17 +22,9 @@ other = "Tag"
 other = "Tags"
 
 [category]
-other = "Category"
-
-[categories]
+one = "Category"
 other = "Categories"
 # === Taxonomy ===
-
-[archive]
-other = "archive"
-
-[about]
-other = "about"
 
 # === Pagination ===
 [More]
@@ -37,7 +34,8 @@ other = "More"
 other = "{{ . }}"
 
 [totalPage]
-other = "{{ . }}"
+one = "{{ . }} Page"
+other = "{{ . }} Pages"
 
 [prevPage]
 other = "Previous"
@@ -46,22 +44,41 @@ other = "Previous"
 other = "Next"
 
 [firstPage]
-other = "First"
+other = "Top"
 
 [lastPage]
 other = "Last"
+# === Pagination ===
 
 # === partials/comments.html ===
 [valineLang]
 other = "en"
+
+[pageComments]
+other = "Page Comments"
 # === partials/comments.html ===
 
 # === partials/footer.html ===
-[powered]
-other = "Powered by %s"
+[footerRunTime]
+other = "Run Time "
 
-[theme]
-other = "Theme - %s"
+[ago]
+other = "ago"
+
+[blogInfo]
+other = "Blog Info"
+
+[postsCount]
+other = "Posts Count"
+
+[commentsCount]
+other = "Comments Count"
+
+[runTime]
+other = "Run Time"
+
+[lastActive]
+other = "Last Active"
 # === partials/footer.html ===
 
 # === posts/single.html ===
@@ -75,37 +92,35 @@ other = "Published on"
 other = "Published date"
 
 [included]
-other = "included in"
-
-[wordCount]
-other = "{{ .Count }} words"
+other = "Included in"
 
 [wordCountTitle]
 other = "Word Count"
 
+[wordCount]
+other = "{{ .Count }} words"
+
 [readingTimeTitle]
 other = "Reading Time"
+
 [readingTime]
 one = "one min"
 other = "{{.Count}} mins"
 
 [pageviews]
-other = "pageviews"
+other = "Views"
 
 [author]
 other = "Author"
 
 [lastMod]
-other = "This article is updated with %s"
+other = "Updated on"
 
 [license]
-other = "Published under the %s license"
+other = "License"
 
 [back]
 other = "Back"
-
-[home]
-other = "Home"
 
 [readmore]
 other = "Read More"
@@ -131,19 +146,26 @@ other = "return"
 
 # === 404.html ===
 [pageNotFoundTitle]
-other = "404 Error"
+other = "Error 404"
+
 [pageNotFound]
-other = "We can't seem to find the page you're looking for."
+other = "Cannot find the required page."
 
 [backToHome]
-other = "Back to Home"
+other = "Back to Homepage"
 # === 404.html ===
 
-
+# === Misc ===
+[home]
+other = "Home"
 [notes]
-  other = "Notes"
+other = "Notes"
 [photos]
-  other = "Photos"
+other = "Photos"
+[archive]
+other = "archive"
+[about]
+other = "about"
 
 [showMenu]
   other = "Show Menu"
@@ -175,43 +197,4 @@ other = "Not Hot Posts"
 
 [seeAlso]
 other = "See Also"
-
-# === Pagination ===
-
-[hosted]
-other = "Hosted by %s "
-
-[cdn]
-other = "CDN by %s"
-
-[blogInfo]
-other = "Blog Info"
-
-[postsCount]
-other = "Posts Count"
-[commentsCount]
-other = "Comments Count"
-[runTime]
-other = "Run Time"
-[lastActive]
-other = "Last Active"
-
-# === partials/footer.html ===
-
-[footerRunTime]
-other = "Run Time "
-
-[ago]
-other = "ago"
-
-
-# === partials/comments.html ===
-
-
-[pageComments]
-other = "Page Comments"
-
-
-# === posts/single.html ===
-
-# === 404.html ===
+# === Misc ===
