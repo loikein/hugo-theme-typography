@@ -1,5 +1,5 @@
 <div class="site-title vertical-text">
-<a href="{{ .Site.BaseURL }}">
+<a href="{{ .Site.BaseURL }}" aria-label="Homepage">
 <h3>{{ $.Site.Params.description }}</h3>
 <h2>{{ .Site.Title }}</h2>
 </a>
@@ -19,7 +19,7 @@
 
 <div class="site-function">
 {{- if ne .Site.Params.search false }}
-  <a href="/search/" title="search"><i class="fa fa-search" aria-hidden="true"></i></a>
+  <a href="/search/" aria-label="Search"><i class="fa fa-search" aria-hidden="true"></i></a>
 {{- end }}
 {{- with .Site.GetPage "/" }}{{ with .OutputFormats.Get "RSS" }}
   <a href="{{ .Permalink }}" target="_blank" aria-label="RSS"><i class="fa fa-rss" aria-hidden="true"></i></a>
@@ -27,7 +27,7 @@
 </div>
 
 {{ if .Site.Social }}
-<div class="social">
+<div class="social" aria-label="Social links">
 {{ with .Site.Social.twitter }}
   <a href="https://twitter.com/{{ . }}" target="_blank" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 {{ end }}
