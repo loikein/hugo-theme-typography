@@ -12,7 +12,6 @@ defaultContentLanguage = "zh"
   languageCode = "zh-Hans"
   languageDirection = "ltr"
 
-mainSections = ["posts"]
 paginate = 2
 paginatePath = "page"
 enableEmoji = false
@@ -56,7 +55,7 @@ enableGitInfo = false # use git commit log to generate lastmod record # 可根�
   home = [ 'RSS', 'HTML' ]
 
 [services.rss]
-  limit = 20             # Limit Entry Count to Rss file # 限制 Rss 文章输出数量
+  limit = 20             # Limit Entry Count to RSS file # 限制 RSS 文章输出数量
 
 [outputFormats]
   [outputFormats.RSS]
@@ -82,14 +81,16 @@ enableGitInfo = false # use git commit log to generate lastmod record # 可根�
   FancyBox = true
   CreativeCommons = true
   MathJax = true
-  # 代码高亮格式
-  HighLightStyle = 'github'
+
   #paginateOriginalStyle = true
   # 首页展示内容
   mainSections = ["posts"]
 
-  [Params.Waline]
-    serverURL = ''
+  [Params.paginate]
+    posts = 20   # number of posts per page in condensed archive (list) layout
+
+  # [Params.Waline]
+  #   serverURL = ''
 
   # [Params.Gitalk]
   #   language = 'zh-CN'
@@ -99,9 +100,6 @@ enableGitInfo = false # use git commit log to generate lastmod record # 可根�
   #   owner = ''
   #   admin = ['']
   #   distractionFreeMode = false
-
-  [Params.Archive]
-    page = 20   # number of posts per page in condensed archive (list) layout
 
 [Menu]
   # [[Menu.Main]]

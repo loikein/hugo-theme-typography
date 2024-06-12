@@ -82,7 +82,23 @@ Ref: [Params | Hugo](https://gohugo.io/methods/site/params/)
 
 In your own website repo, create `./assets/scss/_custom.scss`, and put your code there.
 
-Example: change `overscroll-behavior-y`
+Example 1: Change symbols used in `<hr>` (dinkus)
+
+```scss
+.post-content hr::after {
+  content: "∗ ∗ ∗";
+}
+```
+
+Example 2: Adjust where to break line for site subtitle
+
+```scss
+.header-container .site-title h3 {
+  max-inline-size: 11em;
+}
+```
+
+Example 3: Change over-scroll behaviour
 
 ```scss
 html,

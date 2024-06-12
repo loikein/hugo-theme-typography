@@ -71,7 +71,7 @@
     width: 100%;
     display: block;
     text-align: center;
-    height: 1.2rem;
+    height: 1.3rem;
     margin: 1.2rem 0;
 
     &::after {
@@ -79,6 +79,7 @@
       font-size: 1.2rem;
       line-height: 1;
       color: $global-font-color;
+      display: block;
     }
   }
 
@@ -133,6 +134,13 @@
     // font-size: 105%;
   }
 
+  ul,
+  ol,
+  dl {
+    margin-block-start: .7em;
+    margin-block-end: .7em;
+  }
+
   ul li {
     text-align: -webkit-match-parent;
     margin: .5em 0
@@ -144,6 +152,41 @@
 
   dl dt {
     font-weight: blod
+  }
+
+  dl:not(.post-series) {
+    display: grid;
+    gap: 0.5rem 1rem;
+
+    // align-items: end; // doing more harm than good
+    dt {
+      margin-top: 0;
+      grid-column: 1;
+    }
+
+    dd {
+      margin-bottom: 0;
+      margin-left: 1rem;
+    }
+  }
+
+  @media screen and (min-width: 48rem) {
+    dl:not(.post-series) {
+      grid-template-columns: fit-content(50%) auto;
+
+      dd {
+        grid-column: 2;
+        margin-left: 0;
+      }
+
+      // for section shortcode with no summary
+      // https://stackoverflow.com/a/73797984
+      &:not(:has(dd)) {
+        dt {
+          grid-column: span 2;
+        }
+      }
+    }
   }
 
   ul li>code,

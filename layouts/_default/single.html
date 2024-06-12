@@ -6,29 +6,34 @@
   {{- if .Draft -}}&#32;<i class="fa fa-pencil"></i>{{- end -}}
 </h1>
 <p class="list-tags">
-  <!-- <span>
+  {{- /*
+  <span>
     <i class="fa fa-user-o"></i><span><a href="{{ .Site.BaseURL }}about" title="{{ T "author" }}">{{ .Site.Author.name }}</a></span>
-  </span> -->
-  {{- if .Params.date -}}
-  <span>{{ T "publish" }} <span><time datetime="{{ .Date }}">{{ .Date.Format .Site.Params.DateFormat  }}</time></span>
-  {{- end -}}
   </span>
+  */ -}}
+
+  {{- if .Params.date -}}
+  <span>{{ T "publish" }} <span><time datetime="{{ .Date }}">{{ .Date.Format .Site.Params.DateFormat  }}</time></span></span>
+  {{- end -}}
+
   <span title="{{ T "wordCountTitle" }}">
     <i class="fa fa-keyboard-o"></i><span>{{ T "wordCount" .WordCount}}</span>
   </span>
   <span title="{{ T "readingTimeTitle" }}">
     <i class="fa fa-hourglass-half"></i><span>{{ T "readingTime" .ReadingTime}}</span>
   </span>
-  {{ with .Params.categories }}
+
+  {{- with .Params.categories }}
   <span>
-    <i class="fa fa-folder" aria-hidden="true"></i>{{range .}}<span><a href="{{ "categories" | absURL }}/{{ . | urlize }}">{{ . }}</a></span>{{end}}
+  <i class="fa fa-folder" aria-hidden="true"></i>{{range .}}<span><a href="{{ "categories" | absURL }}/{{ . | urlize }}">{{ . }}</a></span>{{end}}
   </span>
-  {{ end }}
-  {{ with .Params.tags }}
+  {{- end }}
+
+  {{- with .Params.tags }}
   <span>
-    <i class="fa fa-tag" aria-hidden="true"></i>{{range .}}<span><a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a></span>{{end}}
+  <i class="fa fa-tag" aria-hidden="true"></i>{{range .}}<span><a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a></span>{{end}}
   </span>
-  {{ end }}
+  {{- end }}
 </p>
 
 {{- if (and (isset .Params "toc") (eq .Params.toc false)) -}}

@@ -2,6 +2,7 @@
   details {
     border-radius: 5px;
     padding: 5px;
+    margin: .7em 0;
 
     @if (lightness($global-background-color) > 50%) {
       // light themes

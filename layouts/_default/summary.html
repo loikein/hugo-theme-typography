@@ -5,19 +5,19 @@
 </h2>
 <p class="list-tags">
   {{- if .Params.date -}}
-  <span>
+    <span>
     {{ T "publish" }} <span><time datetime="{{ .Date }}">{{ .Date.Format (default "2006-01-02" .Site.Params.DateFormat ) }}</time></span>
+    </span>
   {{- end }}
-  </span>
   {{- with .Params.categories }}
     <span>
-      <i class="fa fa-folder" aria-hidden="true"></i>{{range .}}<span><a href="{{ "categories" | absURL }}/{{ . | urlize }}">{{ . }}</a></span>{{end}}
+    <i class="fa fa-folder" aria-hidden="true"></i>{{range .}}<span><a href="{{ "categories" | absURL }}/{{ . | urlize }}">{{ . }}</a></span>{{end}}
     </span>
   {{- end }}
   {{- with .Params.tags }}
     <span>
-      <i class="fa fa-tag" aria-hidden="true"></i>{{range .}}<span><a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a></span>{{end}}
+    <i class="fa fa-tag" aria-hidden="true"></i>{{range .}}<span><a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a></span>{{end}}
     </span>
   {{- end }}
   </p>
-<article>{{ .Summary }}……</article>
+<section>{{ .Summary }}……</section>

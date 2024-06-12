@@ -15,7 +15,7 @@ Helper
 
 {{- $pinned    := where .Pages "Weight" "lt" 0 -}}
 {{- $unpinned  := where .Pages "Weight" "ge" 0 -}}
-{{- $paginator := .Paginate $unpinned (index .Site.Params.Archive.page | default 20) -}}
+{{- $paginator := .Paginate $unpinned (index .Site.Params.paginate.posts | default 20) -}}
 
 {{- if gt $pinned.Len 0 }}{{- /* Pinned list */ -}}
 <section>
