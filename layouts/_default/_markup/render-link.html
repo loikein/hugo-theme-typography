@@ -1,5 +1,7 @@
+{{- $u := urls.Parse .Destination -}}
 <a href="{{ .Destination | safeURL }}"
 {{- with .Title }} title="{{ . }}"{{ end -}}
+{{- if $u.IsAbs }} rel="external nofollow"{{- else }} class="internal-link"{{ end -}}
 >
 {{- with .Text | safeHTML }}{{ . }}{{ end -}}
 </a>
