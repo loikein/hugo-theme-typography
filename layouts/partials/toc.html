@@ -1,10 +1,17 @@
 {{- /*
+
 Original file:
 https://github.com/AmazingRise/hugo-theme-diary/blob/main/layouts/partials/toc.html
 Distributed under: MIT License Copyright (c) 2019 Rise
 Original license: https://github.com/AmazingRise/hugo-theme-diary/blob/main/LICENSE
 Re-distributed (with modifications) under: MIT License Copyright (c) 2024 loikein
 License: https://github.com/loikein/hugo-theme-typography/blob/main/LICENSE
+
+Notes
+-----
+Try:
+https://github.com/alex-shpak/hugo-book/issues/52#issuecomment-495041783
+
 */ -}}
 
 {{- $headings := findRE `(?is)<h\d.*?</h\d>` .Content }}
