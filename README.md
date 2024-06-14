@@ -82,11 +82,12 @@ Ref: [Params | Hugo](https://gohugo.io/methods/site/params/)
 
 In your own website repo, create `./assets/scss/_custom.scss`, and put your code there.
 
-Example 1: Change symbols used in `<hr>` (dinkus)
+Example 1: Change symbol (dinkus) \& style of `<hr>`
 
 ```scss
 .post-content hr::after {
   content: "∗ ∗ ∗";
+  text-shadow: 0 0 .75px $global-font-color;
 }
 ```
 
