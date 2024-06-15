@@ -24,7 +24,7 @@
 {{ end }}
 
 <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.Description }}{{ end }}" />
-<meta itemprop="name" content="{{ if ne .Permalink "/" }}{{ .Title }} - {{ end }}{{ .Site.Title }}" />
+<meta itemprop="name" content="{{ if ne .Permalink "/" }}{{ .Title }} · {{ end }}{{ .Site.Title }}" />
 <meta itemprop="description" content="{{ if .Description }}{{ .Description }}{{ else if .IsPage }}{{ .Summary }}{{ else }}{{ .Title }}{{ end }}" />
 
 {{ if .Keywords }}

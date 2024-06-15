@@ -2,6 +2,7 @@ $code-font-family:
   Consolas,
   Monaco,
   Menlo,
+  Meslo,
   "DejaVu Sans Mono",
   "Bitstream Vera Sans Mono",
   "Courier New",
@@ -20,7 +21,7 @@ $global-font-family:
   "WenQuanYi Micro Hei",
   Arial,
   Verdana,
-  sans-serif;
+  sans-serif !default;
 
 $global-serif-font-family:
   'Source Han Serif SC',
@@ -31,7 +32,7 @@ $global-serif-font-family:
   'noto-serif-sc',
   'PT Serif',
   'SongTi SC',
-  serif;
+  serif !default;
 
 // $title-font-family:
 //   "HiraMinProN-W6",
