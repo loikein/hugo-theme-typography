@@ -3,7 +3,7 @@
   margin-bottom: 2px;
   display: grid;
   // can only use fr to keep space for invisible items
-  grid-template-columns: 1fr minmax(max-content,auto) 1fr;
+  grid-template-columns: 1fr minmax(max-content, auto) 1fr;
   grid-gap: 10px;
   // does not work with fr cells
   // justify-content: space-between;
@@ -11,6 +11,7 @@
   :first-child {
     justify-self: start;
   }
+
   :last-child {
     justify-self: end;
   }

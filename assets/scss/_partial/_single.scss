@@ -4,9 +4,7 @@
     border: 0.06em solid #ccc;
     background-color: code-color;
     color: #8f8f8f;
-    -webkit-box-shadow: 0 0.06em 0 rgba(0, 0, 0, 0.2), 0 0 0 0.12em #fff inset;
     box-shadow: 0 0.06em 0 rgba(0, 0, 0, 0.2), 0 0 0 0.12em #fff inset;
-    -webkit-border-radius: 0.18em;
     border-radius: 0.18em;
     display: inline-block;
     margin: 0 .1em;
@@ -44,6 +42,8 @@
       opacity: 0;
       text-decoration: none;
       box-shadow: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
       user-select: none;
     }
 
@@ -83,9 +83,18 @@
     }
   }
 
-  strong,
-  em {
+  strong {
     font-weight: bold
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  s,
+  strike,
+  del {
+    opacity: 60%;
   }
 
   acronym,
@@ -100,14 +109,6 @@
 
     :first-child {
       margin-top: 0;
-      // &::before {
-      //   content: "\00275D";
-      //   opacity: .15;
-      //   font-size: 5rem;
-      //   line-height: 30px;
-      //   position: absolute;
-      //   left: 7px;
-      // }
     }
 
     :last-child {

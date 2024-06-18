@@ -1,5 +1,7 @@
 .photo-list {
+  -moz-column-count: 3;
   column-count: 3;
+  -moz-column-gap: 0;
   column-gap: 0;
 
   figure {
@@ -22,6 +24,7 @@
       overflow: hidden;
       height: auto;
       width: 100%;
+      -o-object-fit: contain;
       object-fit: contain;
       border-radius: .75rem;
     }
@@ -46,13 +49,17 @@
 }
 
 .photo-content {
+  -moz-column-count: 3;
   column-count: 3;
+  -moz-column-gap: 0;
   column-gap: 0;
   padding: 1rem;
   background: $global-box-background-color;
 
   article {
+    -moz-column-count: 3;
     column-count: 3;
+    -moz-column-gap: 0;
     column-gap: 0;
   }
 
