@@ -129,15 +129,15 @@
     padding-left: .5em
   }
 
-  ul,
-  ol {
+  &>ul,
+  &>ol {
     padding-left: 2em;
     // font-size: 105%;
   }
 
-  ul,
-  ol,
-  dl {
+  &>ul,
+  &>ol,
+  &>dl {
     margin-block-start: .7em;
     margin-block-end: .7em;
   }
@@ -327,8 +327,8 @@
 
   @media only screen and (min-width: 48rem) {
 
-    ul,
-    ol {
+    &>ul,
+    &>ol {
       padding-left: 3em
     }
   }
