@@ -158,8 +158,8 @@
   dl:not(.post-series) {
     display: grid;
     gap: 0.5rem 1rem;
+    align-items: baseline;
 
-    // align-items: end; // doing more harm than good
     dt {
       margin-top: 0;
       grid-column: 1;
