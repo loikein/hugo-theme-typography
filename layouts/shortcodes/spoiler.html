@@ -6,7 +6,7 @@
 {{- $label := $.Page.Scratch.Get "spoilerCounter" -}}
 
 {{- $block := .Get "block" | default false -}}
-{{- $summary := .Get "summary" | default "Spoiler" -}}
+{{- $summary := .Get "title" | default "Spoiler" -}}
 {{- $open := .Get "open" | default false -}}
 
 {{- if eq $block false -}}{{- /* if is inline */ -}}
