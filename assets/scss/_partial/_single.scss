@@ -196,14 +196,14 @@
   strong code,
   em code,
   dl code {
-    font-family: Monaco, Menlo, Consolas, Courier New, monospace;
+    font-family: $code-font-family;
     background: #eee;
     color: #747070;
     border: 0.06em solid #d6d6d6;
     padding: 0 0.31em;
     margin: 0 0.12em;
     font-size: 90%;
-    white-space: nowrap;
+    // white-space: nowrap;
   }
 
   p {
