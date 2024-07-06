@@ -1,4 +1,9 @@
 // {{< spoiler >}}
+details.spoiler summary {
+  background: linear-gradient(135deg, transparent 25%, rgba($global-font-color, .1) 25%, rgba($global-font-color, .1) 50%, transparent 50%, transparent 75%, rgba($global-font-color, .1) 75%, rgba($global-font-color, .1) 100%);
+  background-size: 100px 100px;
+}
+
 .spoiler-toggle {
 
   &:focus,
