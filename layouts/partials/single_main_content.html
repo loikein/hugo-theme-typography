@@ -52,7 +52,7 @@ Syntax:
 https://github.com/bowman2001/hugo-mod-replacements/blob/main/layouts/partials/replacements.html
 */ -}}
 {{ $content := .Content }}
-{{ $content := $content | replaceRE `==([^=]*)==` "<mark>$1</mark>" }}
+{{ $content  = $content | replaceRE `==([^=]*)==` "<mark>$1</mark>" }}
 <article class="post-content">{{ $content | safeHTML }}</article>
 
 </section>
