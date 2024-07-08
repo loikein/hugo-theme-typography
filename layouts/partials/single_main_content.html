@@ -1,0 +1,64 @@
+<section class="post-container">
+<h1>
+  <a href="{{ .Permalink}}" title="{{ .Title }}">{{ .Title }}</a>
+  {{- if lt .Weight 0 -}}&#32;<i class="fa fa-thumb-tack"></i>{{- end -}}
+  {{- if .Draft -}}&#32;<i class="fa fa-pencil"></i>{{- end -}}
+</h1>
+<p class="list-tags">
+  {{- /*
+  <span>
+    <i class="fa fa-user-o"></i><span><a href="{{ .Site.BaseURL }}about" title="{{ T "author" }}">{{ .Site.Author.name }}</a></span>
+  </span>
+  */ -}}
+
+  {{- if .Params.date -}}
+  <span>{{ T "publish" }} <span><time datetime="{{ .Date }}">{{ .Date.Format .Site.Params.DateFormat  }}</time></span></span>
+  {{- end -}}
+
+  <span title="{{ T "wordCountTitle" }}">
+    <i class="fa fa-keyboard-o"></i><span>{{ T "wordCount" .WordCount}}</span>
+  </span>
+  <span title="{{ T "readingTimeTitle" }}">
+    <i class="fa fa-hourglass-half"></i><span>{{ T "readingTime" .ReadingTime}}</span>
+  </span>
+
+  {{- with .Params.categories }}
+  <span>
+  <i class="fa fa-folder" aria-hidden="true"></i>{{range .}}<span><a href="{{ "categories" | absURL }}/{{ . | urlize }}">{{ . }}</a></span>{{end}}
+  </span>
+  {{- end }}
+
+  {{- with .Params.tags }}
+  <span>
+  <i class="fa fa-tag" aria-hidden="true"></i>{{range .}}<span><a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a></span>{{end}}
+  </span>
+  {{- end }}
+</p>
+
+{{- /* List sub-pages in this section */ -}}
+{{- if .Page.Pages -}}
+{{ partial "toc_section.html" . }}
+{{- end -}}
+
+{{- /* TOC of this page */ -}}
+{{- if (and (isset .Params "toc") (eq .Params.toc false)) -}}
+{{- else -}}
+{{ partial "toc.html" . }}
+{{- end -}}
+
+{{- /* Content replacements */ -}}
+{{- /*
+Syntax:
+https://github.com/bowman2001/hugo-mod-replacements/blob/main/layouts/partials/replacements.html
+*/ -}}
+{{ $content := .Content }}
+{{ $content := $content | replaceRE `==([^=]*)==` "<mark>$1</mark>" }}
+<article class="post-content">{{ $content | safeHTML }}</article>
+
+</section>
+
+{{ partial "post_footer.html" . }}
+
+<div class="main-comment">
+  {{ partial "comment.html" . }}
+</div>

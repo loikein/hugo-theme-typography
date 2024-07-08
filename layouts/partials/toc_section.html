@@ -1,0 +1,9 @@
+<details class="toc" role="navigation" aria-label="Section" open>
+<summary class="toc-title" style="user-select:none;font-weight:bold;">{{ or (T "toc_section") "Pages in this section" | safeHTML }}</summary>
+<ul class="toc-content">
+{{ range .Page.Pages }}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{- if .Page.Pages -}}&#32;<i class="fa fa-folder" title="Section" aria-label="Section" ></i>{{- end -}}</li>
+  {{- /* Not using .Page.IsSection because it is pointless to show a section with only index page as folder */ -}}
+{{ end }}
+</ul>
+</details>

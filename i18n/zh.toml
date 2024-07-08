@@ -9,6 +9,9 @@ other = "文章"
 # === Section ===
 [pinnedPosts]
 other = "置顶"
+
+[toc_section]
+other = "本板块目录"
 # === Section ===
 
 # === Taxonomy ===
@@ -81,7 +84,7 @@ other = "最后活动"
 
 # === posts/single.html ===
 [toc]
-other = "目录"
+other = "本页目录"
 
 [publish]
 other = "发布于"

@@ -20,7 +20,7 @@ https://github.com/alex-shpak/hugo-book/issues/52#issuecomment-495041783
 {{- $h1_n := len (findRE "(.|\n])+?" .Content) }}{{- /* ignore empty links with + */ -}}
 {{- $re := (cond (eq $h1_n 0) `<h[2-4]` `<h[1-4]`) }}
 {{- $renum := (cond (eq $h1_n 0) `[2-4]` `[1-4]`) }}
-<summary class="toc-title" style="user-select:none;">{{ or (T "toc") "Table of contents" | safeHTML }}</summary>
+<summary class="toc-title" style="user-select:none;">{{ or (T "toc") "On this page" | safeHTML }}</summary>
 {{- $scratch := newScratch }}
 {{- $scratch.Set "prev_heading" 2 }}{{- /* Control starting level */}}
 <ul class="toc-content">

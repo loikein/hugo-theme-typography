@@ -9,6 +9,9 @@ other = "Posts"
 # === Section ===
 [pinnedPosts]
 other = "Pinned entries"
+
+[toc_section]
+other = "Pages in this section"
 # === Section ===
 
 # === Taxonomy ===
@@ -83,7 +86,7 @@ other = "Last Active"
 
 # === posts/single.html ===
 [toc]
-other = "Table of Contents"
+other = "On this page"
 
 [publish]
 other = "Published on"

@@ -22,7 +22,10 @@ Upstream:
 - [x] 新增了文章列表和文章内的翻页样式
 - [x] 修改了 TOC 的样式
 - [x] Pin posts to top (set `weight=-1` in front matter)
-- [ ] Taxonomy post list
+- [x] Taxonomy page
+- [x] Implement `==highlight text==` syntax (thanks: [bowman2001/hugo-mod-replacements](https://github.com/bowman2001/hugo-mod-replacements/tree/main))
+- [ ] (?) Taxonomy terms page CSS
+- [ ] Section page with content
 - [ ] Code block style
 - [ ] menu config
 - [ ] (?) Light/dark mode switcher

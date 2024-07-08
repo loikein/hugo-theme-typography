@@ -1,14 +1,40 @@
 {{ define "main_content" }}
+{{- /*
+Cherry-pick collection of pages to pass to paginator
+
+Also see
+--------
+Novelist theme / layouts / index.html
+
+References
+----------
+https://discourse.gohugo.io/t/how-to-select-both-pages-and-sections-on-the-same-level/17205/7
+https://discourse.gohugo.io/t/test-if-direct-descendant-of-homepage/25622/2
+
+Original
+--------
+{{ $pages := where .Site.Pages "CurrentSection" "in" site.Params.mainSections }}
+
+ */ -}}
+{{- $pages := slice -}}
+{{- range (where .Site.Pages "Section" "in" site.Params.mainSections ) -}}
+  {{- if eq .FirstSection .Parent -}}
+    {{- $pages = $pages | append . -}}
+  {{- end -}}
+{{- end -}}
+
 <section class="post-archive post-archive--summary" data-pagefind-ignore>
-  <ul class="post-list post-list--summary">
-    {{ $pages := where .Site.RegularPages "Type" "in" site.Params.mainSections }}
-    {{ $paginator := .Paginate $pages}}
-    {{ range $paginator.Pages }}
-      <li>
-        {{ .Render "summary"}}
-      </li>
-    {{ end }}
-  </ul>
+<ul class="post-list post-list--summary">
+  {{ $paginator := .Paginate $pages}}
+  {{ range $paginator.Pages }}
+    <li>
+      {{- if gt (len site.Params.mainSections) 1 -}}
+      <a href="{{ .Parent.RelPermalink }}" style="text-decoration:none;box-shadow:none;">{{ .Parent.LinkTitle }}</a>
+      {{- end -}}
+      {{ .Render "summary" }}
+    </li>
+  {{ end }}
+</ul>
 </section>
 {{ partial "pagination" . }}
 {{ end }}

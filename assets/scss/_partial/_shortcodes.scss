@@ -4,6 +4,15 @@ details.spoiler summary {
   background-size: 100px 100px;
 }
 
+.spoiler-inline,
+.spoiler-inline a {
+  // default (not checked)
+  background: $global-font-color;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
 .spoiler-toggle {
 
   &:focus,
@@ -16,15 +25,8 @@ details.spoiler summary {
     @include outline;
   }
 
-  +.spoiler-inline,
-  +.spoiler-inline * {
-    background: $global-font-color;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-
-  &:checked+.spoiler-inline {
+  &:checked+.spoiler-inline,
+  &:checked+.spoiler-inline a {
     // showing
     cursor: zoom-out;
     @include font-on-background;

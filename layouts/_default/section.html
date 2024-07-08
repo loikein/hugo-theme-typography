@@ -1,4 +1,7 @@
 {{ define "main_content" }}
+{{- if .Content -}}{{- /* Section page with own content */ -}}
+  {{ partial "single_main_content.html" . }}
+{{- else -}}{{- /* Pure section list page */ -}}
 <section class="post-archive post-archive--summary" data-pagefind-ignore>
   <h1 class="path-title">{{ .Title }}<span>&#32;({{ len .Pages }})</span></h1>
   <ul class="post-list post-list--summary">
@@ -11,4 +14,5 @@
   </ul>
 </section>
 {{ partial "pagination" . }}
+{{- end -}}
 {{ end }}
