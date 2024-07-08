@@ -11,7 +11,7 @@ other = "文章"
 other = "置顶"
 
 [toc_section]
-other = "本板块目录"
+other = "子页面一览"
 # === Section ===
 
 # === Taxonomy ===
