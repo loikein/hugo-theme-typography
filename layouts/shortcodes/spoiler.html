@@ -3,11 +3,11 @@
 {{- else -}}
 {{- $.Page.Scratch.Set "spoilerCounter" 1 -}}
 {{- end -}}
-{{- $label := $.Page.Scratch.Get "spoilerCounter" -}}
+{{- $label   := $.Page.Scratch.Get "spoilerCounter" -}}
 
-{{- $block := .Get "block" | default false -}}
+{{- $block   := .Get "block" | default false -}}
 {{- $summary := .Get "title" | default "Spoiler" -}}
-{{- $open := .Get "open" | default false -}}
+{{- $open    := .Get "open" | default false -}}
 
 {{- if eq $block false -}}{{- /* if is inline */ -}}
 {{- /*
@@ -22,8 +22,6 @@
 {{- else -}}{{- /* if is block */ -}}
 <details class="spoiler" aria-label="spoiler" title="Spoiler" {{ if eq $open true}}open{{ end }}>
   <summary>{{ $summary | .Page.RenderString }}</summary>
-  <div class="markdown-inner" aria-label="spoiler content">
-    {{ .Inner | .Page.RenderString }}
-  </div>
+  <div class="markdown-inner" aria-label="spoiler content">{{ .Inner | .Page.RenderString }}</div>
 </details>
 {{- end -}}
