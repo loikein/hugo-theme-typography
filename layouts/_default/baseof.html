@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="{{ default .Site.Language.LanguageCode .Params.Language }}">
 <head>
-{{ partial "body_head.html" . }}
+{{ partial "html_head.html" . }}
 </head>
 <body>
 <a class="screen-reader screen-reader-focusable" href="#main">Skip to main content</a>
@@ -15,6 +15,6 @@
   </main>
   <div class="footer-container-mobile">{{ partialCached "footer.html" . }}</div>
 </div>
-{{ partialCached "body_foot.html" . }}
+{{ partialCached "html_foot.html" . }}
 </body>
 </html>

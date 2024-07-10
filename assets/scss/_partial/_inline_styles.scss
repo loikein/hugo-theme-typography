@@ -11,6 +11,7 @@
   strike,
   del {
     color: rgba($global-font-color, .6);
+    // the line-through cannot be printed from Firefox. weird.
   }
 
   del.critic {
@@ -35,7 +36,7 @@
     background: rgba(#a2e0bd, .3);
   }
 
-  del.critic + ins {
+  del.critic+ins {
     border-bottom: .2em double #a1d6ff;
     background: rgba(#a1d6ff, .3);
   }
@@ -46,11 +47,15 @@
     color: inherit;
 
     @media screen and (-ms-high-contrast: active) {
-
-      // https://adrianroselli.com/2017/12/tweaking-text-level-styles.html#MarkWHCM
       & {
         color: HighlightText;
         background: Highlight;
+      }
+    }
+
+    @media print {
+      & {
+        border: 1px dotted currentColor;
       }
     }
   }

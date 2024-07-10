@@ -1,22 +1,22 @@
-{{ partial "body_head.html" . }}
+{{ partial "html_head.html" . }}
 <body>
-    <main class="app-main" style="background: #fff;">
-        <div class="main-container">
-            <div class="errPage-container">
-            <div>
-              <h1 class="text-jumbo text-ginormous">
-                {{T "pageNotFoundTitle"}}
-              </h1>
-              <h2>{{T "pageNotFound"}}</h2>
-              <div class="list-unstyled">
-                <a href="{{ .Site.BaseURL }}" class="pan-back-btn">
-                  <i class="fa fa-angle-left"></i>
-                  <span>{{T "back"}}</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-    </main>
+<main class="app-main" style="background: #fff;">
+<div class="main-container">
+    <div class="errPage-container">
+    <div>
+      <h1 class="text-jumbo text-ginormous">
+        {{T "pageNotFoundTitle"}}
+      </h1>
+      <h2>{{T "pageNotFound"}}</h2>
+      <div class="list-unstyled">
+        <a href="{{ .Site.BaseURL }}" class="pan-back-btn">
+          <i class="fa fa-angle-left"></i>
+          <span>{{T "back"}}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
 </body>
 </html>

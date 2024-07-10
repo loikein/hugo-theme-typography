@@ -29,6 +29,7 @@ Upstream:
     - [ ] Use classes
 - [x] Internal link validation
 - [x] Support [Critic Markup](https://fletcher.github.io/MultiMarkdown-6/syntax/critic.html)
+- [ ] Refresh 404 page
 - [ ] (?) External link validation
 - [ ] (?) Taxonomy <u>terms</u> page CSS
 - [ ] menu config
