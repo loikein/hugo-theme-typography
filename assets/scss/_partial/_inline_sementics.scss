@@ -1,0 +1,62 @@
+.post-content {
+  strong {
+    font-weight: bold
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  s,
+  strike,
+  del {
+    color: rgba($global-font-color, .6);
+  }
+
+  del.critic {
+    // text-decoration: none;
+    // border-bottom: .2em double #fbb;
+    background: rgba(#fbb, .3);
+  }
+
+  acronym,
+  abbr {
+    border-bottom: .1em dotted;
+  }
+
+  ins {
+    text-decoration: none;
+    border-bottom: .2em double #a2e0bd;
+    // text-decoration-style: double;
+    // text-decoration-thickness: 1.3px;
+    // text-decoration-color: #080;
+    // text-underline-offset: 3px;
+    // text-decoration-skip-ink: none;
+    background: rgba(#a2e0bd, .3);
+  }
+
+  del.critic + ins {
+    border-bottom: .2em double #a1d6ff;
+    background: rgba(#a1d6ff, .3);
+  }
+
+  mark {
+    // background: linear-gradient(to top, Mark 40%, transparent 40%);
+    background: rgba(yellow, .3);
+    color: inherit;
+
+    @media screen and (-ms-high-contrast: active) {
+
+      // https://adrianroselli.com/2017/12/tweaking-text-level-styles.html#MarkWHCM
+      & {
+        color: HighlightText;
+        background: Highlight;
+      }
+    }
+  }
+
+  small.critic {
+    font-size: 100%;
+    color: rgba($global-font-color, .6);
+  }
+}

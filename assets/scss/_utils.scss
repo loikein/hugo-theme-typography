@@ -16,6 +16,11 @@
   }
 }
 
+@mixin height-control {
+  max-height: 30vh;
+  overflow-y: auto;
+}
+
 .vertical-text {
   writing-mode: vertical-rl;
 }

@@ -24,9 +24,13 @@ Upstream:
 - [x] Pin posts to top (set `weight=-1` in front matter)
 - [x] Taxonomy page
 - [x] Implement `==highlight text==` syntax (thanks: [bowman2001/hugo-mod-replacements](https://github.com/bowman2001/hugo-mod-replacements/tree/main))
-- [ ] (?) Taxonomy terms page CSS
-- [ ] Section page with content
-- [ ] Code block style
+- [x] Section page with content
+- [x] Code block style
+    - [ ] Use classes
+- [x] Internal link validation
+- [x] Support [Critic Markup](https://fletcher.github.io/MultiMarkdown-6/syntax/critic.html)
+- [ ] (?) External link validation
+- [ ] (?) Taxonomy <u>terms</u> page CSS
 - [ ] menu config
 - [ ] (?) Light/dark mode switcher
 

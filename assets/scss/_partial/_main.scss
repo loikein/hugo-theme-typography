@@ -17,13 +17,13 @@
       // dark themes
       background: rgba($global-font-color, .2);
       -webkit-backdrop-filter: blur(20px);
-              backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
     }
 
     summary {
       cursor: zoom-in;
-      padding-left: 22px;
-      text-indent: -22px;
+      padding-left: 17px;
+      text-indent: -15px;
       // https://www.thesitewizard.com/css/hanging-indents.shtml
     }
 
@@ -33,6 +33,7 @@
 
     .markdown-inner {
       padding-top: 5px;
+      @include height-control;
 
       :first-child {
         padding-top: 0;
@@ -103,7 +104,6 @@
   //     animation-direction: alternate;
   //   }
   // }
-
   .list-tags {
     margin: 4px 0;
     font-size: 0.9rem;
@@ -122,6 +122,10 @@
     ul li {
       margin: .5em 0;
     }
+  }
+
+  .toc-content {
+    @include height-control;
   }
 
   .post-container {

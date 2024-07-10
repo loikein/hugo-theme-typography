@@ -51,9 +51,19 @@
 Syntax:
 https://github.com/bowman2001/hugo-mod-replacements/blob/main/layouts/partials/replacements.html
 */ -}}
-{{ $content := .Content }}
-{{ $content  = $content | replaceRE `==([^=]*)==` "<mark>$1</mark>" }}
-<article class="post-content">{{ $content | safeHTML }}</article>
+{{ $content := .RawContent }}
+{{- /* Critic Markup */ -}}
+{{- $content  = $content
+              | replaceRE `{\+\+ ?([^}]*)\+\+}` `<ins class="critic">$1</ins>`
+              | replaceRE `{>> ?([^}]*)<<}` `<small class="critic">$1</small>`
+              | replaceRE `{-- ?([^}]*)--}` `<del class="critic">$1</del>`
+              | replaceRE `{== ?([^}]*)==}` `<mark class="critic">$1</mark>`
+              | replaceRE `{~~ ?([^~]*)~> ?([^}]*)~~}` `<del class="critic">$1</del>&#32;<ins class="critic">$2</ins>` -}}
+{{- /* Markdown extensions */ -}}
+{{- $content  = $content | replaceRE `==([^=]*)==` "<mark>$1</mark>" -}}
+
+{{- $content  = $content | .RenderString -}}
+<article class="post-content">{{ $content }}</article>
 
 </section>
 
