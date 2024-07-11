@@ -12,7 +12,7 @@ defaultContentLanguage = "zh"
   languageCode = "zh-Hans"
   languageDirection = "ltr"
 
-paginate = 2
+paginate = 3
 paginatePath = "page"
 enableEmoji = false
 enableRobotsTXT = true
@@ -46,7 +46,10 @@ enableGitInfo = false # use git commit log to generate lastmod record # 可根�
   LinkIn = "example"
 
 [markup.highlight]
-  style = "friendly"       # https://xyproto.github.io/splash/docs/all.html
+  style = "friendly"
+  # Style reference:
+  # https://www.veriphor.com/articles/syntax-highlighting-styles/?#predefined-styles
+  guessSyntax = true
 
 [markup.goldmark.renderer]
   unsafe = true
