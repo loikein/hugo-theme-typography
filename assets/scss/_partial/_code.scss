@@ -21,7 +21,7 @@
   .highlight>pre,
   .highlight>div {
     overflow: auto;
-    border: 1px solid #ddd;
+    border: 1px solid $global-background-color;
     border-radius: 5px;
     padding: .5em;
 
