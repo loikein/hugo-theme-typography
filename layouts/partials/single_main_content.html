@@ -58,7 +58,7 @@ https://github.com/bowman2001/hugo-mod-replacements/blob/main/layouts/partials/r
               | replaceRE `{>> ?([^}]*)<<}` `<small class="critic">$1</small>`
               | replaceRE `{-- ?([^}]*)--}` `<del class="critic">$1</del>`
               | replaceRE `{== ?([^}]*)==}` `<mark class="critic">$1</mark>`
-              | replaceRE `{~~ ?([^~]*)~> ?([^}]*)~~}` `<del class="critic">$1</del><ins class="critic">$2</ins>` -}}
+              | replaceRE `{~~ ?([^~]*)~> ?([^}]*)~~}` `<del class="critic">$1</del>&#8203;<ins class="critic">$2</ins>` -}}
 {{- /* Markdown extensions */ -}}
 {{- $content  = $content | replaceRE `==([^=]*)==` "<mark>$1</mark>" -}}
 
