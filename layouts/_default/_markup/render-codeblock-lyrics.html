@@ -1,0 +1,6 @@
+{{- $inner := .Inner -}}
+{{- $inner  = replace $inner "---" "&mdash;" -}}
+{{- $inner  = replace $inner "--" "&ndash;" -}}
+<pre class="lyrics">
+  {{- $inner | safeHTML }}
+</pre>

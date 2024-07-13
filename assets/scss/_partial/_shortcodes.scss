@@ -53,3 +53,125 @@ details.spoiler summary {
     }
   }
 }
+
+// {{< sticky >}}
+.sticky-ind {
+  position: relative;
+  vertical-align: super;
+  line-height: 1;
+  user-select: none;
+  font-size: 50%;
+  margin-inline-start: -8px;
+  color: $sticky-yellow;
+  display: inline-block;
+}
+
+label:has(+ input.sticky-toggle:focus),
+label:has(+ input.sticky-toggle:active) {
+  @include outline;
+}
+
+.sticky {
+  position: relative;
+  float: right;
+  clear: both;
+  padding: 0 5px;
+  margin: 2px 5px;
+  // max-width: 25%;
+  width: 25%;
+  // border-left: 5px solid $sticky-yellow;
+  background: rgba($sticky-yellow, .5);
+
+  @if (lightness($global-background-color) <=50%) {
+    // dark themes
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
+
+  .sticky-toggle:focus+&,
+  .sticky-toggle:active+& {
+    @include outline;
+  }
+
+  @media screen and (max-width: 48rem) {
+    & {
+      display: none;
+    }
+
+    .sticky-toggle:checked+& {
+      display: block;
+      // max-width: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.sticky-ind--green {
+  color: $sticky-green;
+}
+
+.sticky--green {
+  background: rgba($sticky-green, .5);
+  // border-left: 5px solid $sticky-green;
+}
+
+.sticky-ind--blue {
+  color: $sticky-blue;
+}
+
+.sticky--blue {
+  background: rgba($sticky-blue, .5);
+  // border-left: 5px solid $sticky-blue;
+}
+
+.sticky-ind--pink {
+  color: $sticky-pink;
+}
+
+.sticky--pink {
+  background: rgba($sticky-pink, .5);
+  // border-left: 5px solid $sticky-pink;
+}
+
+.sticky-ind--purple {
+  color: $sticky-purple;
+}
+
+.sticky--purple {
+  background: rgba($sticky-purple, .5);
+  // border-left: 5px solid $sticky-purple;
+}
+
+// poem (code render hook)
+.poem {
+  font-family: $global-serif-font-family;
+  letter-spacing: .3px;
+  text-shadow: 0 0 .5px $global-font-color;
+  white-space: preserve;
+
+  .sticky-toggle,
+  .sticky {
+    font-family: $global-font-family;
+    white-space: normal;
+    letter-spacing: .1px;
+    text-shadow: none;
+  }
+}
+
+// lyrics (code render hook)
+.lyrics {
+  font-family: $global-font-family;
+  white-space: preserve;
+  columns: 2;
+
+  @media screen and (max-width: 48rem) {
+    & {
+      columns: unset;
+    }
+  }
+
+  .sticky-toggle,
+  .sticky {
+    white-space: normal;
+  }
+}

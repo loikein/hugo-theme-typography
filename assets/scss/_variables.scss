@@ -24,14 +24,10 @@ $global-font-family:
   sans-serif !default;
 
 $global-serif-font-family:
+  Charter, 'Bitstream Charter', 'Sitka Text', Cambria,
   'Source Han Serif SC',
-  'Source Han Serif',
-  'source-han-serif-sc',
   'Noto Serif SC',
-  'Noto Serif',
-  'noto-serif-sc',
   'PT Serif',
-  'SongTi SC',
   serif !default;
 
 // $title-font-family:
@@ -52,3 +48,10 @@ $global-solid-color: #77777747 !default;
 
 // photo
 $global-box-background-color: rgba(255, 255, 255, 0.8) !default;
+
+// sticky notes
+$sticky-yellow: #F4CD6D;
+$sticky-green: #ADE593;
+$sticky-blue: #B0D6FF;
+$sticky-pink: #FFBDCA;
+$sticky-purple: #D8C8FF;

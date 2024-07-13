@@ -1,0 +1,19 @@
+{{- with $.Page.Scratch.Get "stickyCounter" -}}
+{{- $.Page.Scratch.Set "stickyCounter" (add . 1) -}}
+{{- else -}}
+{{- $.Page.Scratch.Set "stickyCounter" 1 -}}
+{{- end -}}
+{{- $label   := $.Page.Scratch.Get "stickyCounter" -}}
+
+{{- $content := index .Params 0 -}}
+{{- $colour  := index .Params 1 | default "yellow" -}}
+{{- $ind     := .Site.Params.stickyInd | default "&#x25E5;" -}}
+
+<label for="sticky-{{ $label }}" class="sticky-toggle sticky-ind sticky-ind--{{ $colour }}">{{ $ind | transform.HTMLUnescape }}</label>{{- /* chomp whitespace */ -}}
+<input type="checkbox" id="sticky-{{ $label }}" class="sticky-toggle screen-reader" aria-label="sticy note toggle"/>{{- /* chomp whitespace */ -}}
+<small class="sticky sticky--{{ $colour }}">{{- /* chomp whitespace */ -}}
+  <span class="screen-reader">(Note:&#32;</span>
+  {{- $content | .Page.RenderString -}}
+  <span class="screen-reader">)</span>{{- /* chomp whitespace */ -}}
+</small>
+{{- /* chomp whitespace */ -}}

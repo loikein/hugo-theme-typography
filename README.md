@@ -29,7 +29,10 @@ Upstream:
     - [ ] Use classes
 - [x] Internal link validation
 - [x] Support [Critic Markup](https://fletcher.github.io/MultiMarkdown-6/syntax/critic.html)
+- [x] Sticky-like side note
+- [x] Poem block
 - [ ] Refresh 404 page
+- [ ] Styles for `<table>`
 - [ ] (?) External link validation
 - [ ] (?) Taxonomy <u>terms</u> page CSS
 - [ ] menu config

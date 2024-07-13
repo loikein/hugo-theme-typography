@@ -37,6 +37,7 @@
     -moz-osx-font-smoothing: grayscale;
     padding: .3em 0;
     margin: .5em 0;
+    text-wrap: balance;
 
     a.anchor {
       opacity: 0;
@@ -163,7 +164,7 @@
 
   p {
     // font-size: 105%;
-    line-height: 1.7;
+    // line-height: 1.7;
     margin: .7em 0;
   }
 
