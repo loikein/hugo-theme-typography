@@ -50,8 +50,10 @@ $global-solid-color: #77777747 !default;
 $global-box-background-color: rgba(255, 255, 255, 0.8) !default;
 
 // sticky notes
-$sticky-yellow: #F4CD6D;
-$sticky-green: #ADE593;
-$sticky-blue: #B0D6FF;
-$sticky-pink: #FFBDCA;
-$sticky-purple: #D8C8FF;
+$sticky-colors: (
+  yellow: #F4CD6D,
+  green:  #ADE593,
+  blue:   #B0D6FF,
+  pink:   #FFBDCA,
+  purple: #D8C8FF,
+) !default;

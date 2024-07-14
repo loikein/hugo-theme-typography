@@ -59,11 +59,12 @@ details.spoiler summary {
   position: relative;
   vertical-align: super;
   line-height: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
   user-select: none;
-  font-size: 50%;
-  margin-inline-start: -8px;
-  color: $sticky-yellow;
-  display: inline-block;
+  font-size: .7em;
+  margin-inline-start: -5px;
+  display: inline;
 }
 
 label:has(+ input.sticky-toggle:focus),
@@ -79,8 +80,6 @@ label:has(+ input.sticky-toggle:active) {
   margin: 2px 5px;
   // max-width: 25%;
   width: 25%;
-  // border-left: 5px solid $sticky-yellow;
-  background: rgba($sticky-yellow, .5);
 
   @if (lightness($global-background-color) <=50%) {
     // dark themes
@@ -96,6 +95,7 @@ label:has(+ input.sticky-toggle:active) {
   @media screen and (max-width: 48rem) {
     & {
       display: none;
+      font-size: 100%;
     }
 
     .sticky-toggle:checked+& {
@@ -106,40 +106,15 @@ label:has(+ input.sticky-toggle:active) {
   }
 }
 
-.sticky-ind--green {
-  color: $sticky-green;
-}
+@each $name, $value in $sticky-colors {
+  .sticky-ind--#{$name} {
+    color: $value;
+  }
 
-.sticky--green {
-  background: rgba($sticky-green, .5);
-  // border-left: 5px solid $sticky-green;
-}
-
-.sticky-ind--blue {
-  color: $sticky-blue;
-}
-
-.sticky--blue {
-  background: rgba($sticky-blue, .5);
-  // border-left: 5px solid $sticky-blue;
-}
-
-.sticky-ind--pink {
-  color: $sticky-pink;
-}
-
-.sticky--pink {
-  background: rgba($sticky-pink, .5);
-  // border-left: 5px solid $sticky-pink;
-}
-
-.sticky-ind--purple {
-  color: $sticky-purple;
-}
-
-.sticky--purple {
-  background: rgba($sticky-purple, .5);
-  // border-left: 5px solid $sticky-purple;
+  .sticky--#{$name} {
+    // border-left: 5px solid $value;
+    background: rgba($value, .4);
+  }
 }
 
 // poem (code render hook)
@@ -147,7 +122,7 @@ label:has(+ input.sticky-toggle:active) {
   font-family: $global-serif-font-family;
   letter-spacing: .3px;
   text-shadow: 0 0 .5px $global-font-color;
-  white-space: preserve;
+  white-space: pre-wrap;
 
   .sticky-toggle,
   .sticky {
@@ -161,11 +136,13 @@ label:has(+ input.sticky-toggle:active) {
 // lyrics (code render hook)
 .lyrics {
   font-family: $global-font-family;
-  white-space: preserve;
+  white-space: pre-wrap;
+  -moz-columns: 2;
   columns: 2;
 
   @media screen and (max-width: 48rem) {
     & {
+      -moz-columns: unset;
       columns: unset;
     }
   }
