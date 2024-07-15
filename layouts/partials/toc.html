@@ -16,7 +16,7 @@ https://github.com/alex-shpak/hugo-book/issues/52#issuecomment-495041783
 
 {{- $headings := findRE `(?is)<h\d.*?</h\d>` .Content }}
 {{ if ge (len $headings) 2 }}{{- /* Do not create TOC if only gets one heading */ -}}
-<details class="toc" role="navigation" aria-label="Page">
+<details class="toc" role="navigation" aria-label="Page" open>
 {{- $h1_n := len (findRE "(.|\n])+?" .Content) }}{{- /* ignore empty links with + */ -}}
 {{- $re := (cond (eq $h1_n 0) `<h[2-4]` `<h[1-4]`) }}
 {{- $renum := (cond (eq $h1_n 0) `[2-4]` `[1-4]`) }}

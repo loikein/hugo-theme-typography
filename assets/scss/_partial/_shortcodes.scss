@@ -145,6 +145,10 @@ label:has(+ input.sticky-toggle:active) {
       -moz-columns: unset;
       columns: unset;
     }
+
+    .sticky {
+      display: block;
+    }
   }
 
   .sticky-toggle,

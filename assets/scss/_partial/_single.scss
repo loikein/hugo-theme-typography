@@ -205,20 +205,52 @@
   }
 
   table {
-    width: 100%;
+    max-width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
+    margin: auto;
+
+    @if (lightness($global-background-color) > 50%) {
+      // light themes
+      background: #fff;
+    }
+
+    @else {
+      // dark themes
+      background: #000;
+    }
   }
 
   table th {
     font-weight: bold;
-    border-bottom: 0.18em solid #dbdbdb;
-    padding-bottom: .5em
+    border-bottom: 1px solid #dbdbdb;
+    padding: .5rem 1rem;
+    position: sticky;
+    top: 0;
+
+    // need solid colours here for sticky head
+    @if (lightness($global-background-color) > 50%) {
+      // light themes
+      background: mix($global-font-color, #fff, 15%);
+    }
+
+    @else {
+      // dark themes
+      background: mix($global-font-color, #000, 30%);
+    }
+  }
+
+  // table tr:nth-child(2n),
+  table tr:hover {
+    background: rgba($global-background-color, 1);
+    // code {
+    //   border: 1px solid currentColor;
+    // }
   }
 
   table td {
-    border-bottom: 0.06em solid #dbdbdb;
-    padding: 0.62em 0
+    border-bottom: 1px solid #dbdbdb;
+    padding: .5rem 1rem;
   }
 
   .pullquote {
