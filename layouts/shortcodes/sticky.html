@@ -9,9 +9,9 @@
 {{- $colour  := index .Params 1 | default "yellow" -}}
 {{- $ind     := .Site.Params.stickyInd | default "&#x25E5;" -}}
 
-<label for="sticky-{{ $label }}" class="sticky-toggle sticky-ind sticky-ind--{{ $colour }}">{{ $ind | transform.HTMLUnescape }}</label>{{- /* chomp whitespace */ -}}
-<input type="checkbox" id="sticky-{{ $label }}" class="sticky-toggle screen-reader" aria-label="sticy note toggle"/>{{- /* chomp whitespace */ -}}
-<small class="sticky sticky--{{ $colour }}">{{- /* chomp whitespace */ -}}
+<label for="sticky-{{ $label }}" class="sticky-toggle sticky-ind sticky-ind--{{ $colour }}" aria-hidden="true">{{ $ind | transform.HTMLUnescape }}</label>{{- /* chomp whitespace */ -}}
+<input type="checkbox" id="sticky-{{ $label }}" class="sticky-toggle screen-reader" aria-hidden="true"/>{{- /* chomp whitespace */ -}}
+<small class="sticky sticky--{{ $colour }}" role="complementary">{{- /* chomp whitespace */ -}}
   <span class="screen-reader">(Note:&#32;</span>
   {{- $content | .Page.RenderString -}}
   <span class="screen-reader">)</span>{{- /* chomp whitespace */ -}}

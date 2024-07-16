@@ -79,13 +79,8 @@ label:has(+ input.sticky-toggle:active) {
   padding: 0 5px;
   margin: 2px 5px;
   // max-width: 25%;
-  width: 25%;
-
-  @if (lightness($global-background-color) <=50%) {
-    // dark themes
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-  }
+  // width: 25%;
+  width: 12vw;
 
   .sticky-toggle:focus+&,
   .sticky-toggle:active+& {
@@ -113,7 +108,17 @@ label:has(+ input.sticky-toggle:active) {
 
   .sticky--#{$name} {
     // border-left: 5px solid $value;
-    background: rgba($value, .4);
+    // background: rgba($value, .4);
+
+    @if (lightness($global-background-color) > 50%) {
+      // light themes
+      background: mix($value, #fff, 40%);
+    }
+
+    @else {
+      // dark themes
+      background: mix($value, #000, 40%);
+    }
   }
 }
 
@@ -140,19 +145,21 @@ label:has(+ input.sticky-toggle:active) {
   -moz-columns: 2;
   columns: 2;
 
+  .sticky {
+    white-space: normal;
+    width: 25%;
+  }
+
   @media screen and (max-width: 48rem) {
     & {
       -moz-columns: unset;
       columns: unset;
     }
 
-    .sticky {
+    .sticky,
+    .sticky-toggle:checked+.sticky {
       display: block;
+      width: 25%;
     }
-  }
-
-  .sticky-toggle,
-  .sticky {
-    white-space: normal;
   }
 }
