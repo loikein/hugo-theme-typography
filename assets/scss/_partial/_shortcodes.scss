@@ -123,13 +123,13 @@ label:has(+ input.sticky-toggle:active) {
 }
 
 // poem (code render hook)
-.poem {
+pre[data-lang="poem"] {
   font-family: $global-serif-font-family;
   letter-spacing: .3px;
   text-shadow: 0 0 .5px $global-font-color;
   white-space: pre-wrap;
 
-  .sticky-toggle,
+  .sticky-ind,
   .sticky {
     font-family: $global-font-family;
     white-space: normal;
@@ -139,11 +139,16 @@ label:has(+ input.sticky-toggle:active) {
 }
 
 // lyrics (code render hook)
-.lyrics {
+pre[data-lang="lyrics"] {
   font-family: $global-font-family;
   white-space: pre-wrap;
   -moz-columns: 2;
   columns: 2;
+
+  &[data-columns="1"] {
+    -moz-columns: unset;
+    columns: unset;
+  }
 
   .sticky {
     white-space: normal;
@@ -156,10 +161,13 @@ label:has(+ input.sticky-toggle:active) {
       columns: unset;
     }
 
-    .sticky,
-    .sticky-toggle:checked+.sticky {
-      display: block;
-      width: 25%;
+    &:not([data-columns="1"]) {
+
+      .sticky,
+      .sticky-toggle:checked+.sticky {
+        display: block;
+        width: 25%;
+      }
     }
   }
 }

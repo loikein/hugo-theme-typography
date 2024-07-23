@@ -1,6 +1,7 @@
 {{- $inner := .Inner -}}
 {{- $inner  = replace $inner "---" "&mdash;" -}}
 {{- $inner  = replace $inner "--" "&ndash;" -}}
-<pre class="poem">
+
+<pre data-lang="{{ .Type }}">
   {{- $inner | safeHTML }}
 </pre>

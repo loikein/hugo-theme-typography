@@ -1,6 +1,13 @@
-{{- $inner := .Inner -}}
-{{- $inner  = replace $inner "---" "&mdash;" -}}
-{{- $inner  = replace $inner "--" "&ndash;" -}}
-<pre class="lyrics">
+{{- $inner    := .Inner -}}
+{{- $inner     = replace $inner "---" "&mdash;" -}}
+{{- $inner     = replace $inner "--" "&ndash;" -}}
+
+<pre data-lang="{{ .Type }}"
+  {{- with .Attributes -}}
+    {{- range $k, $v := . -}}
+      {{- (printf " %s=%q" $k $v) | safeHTMLAttr -}}
+    {{- end -}}
+  {{- end -}}
+>
   {{- $inner | safeHTML }}
 </pre>
