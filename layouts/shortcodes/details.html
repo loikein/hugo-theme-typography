@@ -1,6 +1,13 @@
 {{- $summary := cond .IsNamedParams (.Get "title") (.Get 0) | default "Details" -}}
 
-<details {{ if or (.Get "open") (in .Params "open") }}open{{ end }}>
+<details
+  {{- if or (.Get "open") (in .Params "open") -}}
+    {{- (print " open") | safeHTMLAttr -}}
+  {{- end -}}
+  {{- with .Get "lang" -}}
+    {{- (printf " lang=%q" (.)) | safeHTMLAttr -}}
+  {{- end -}}
+>
   <summary>{{ $summary | .Page.RenderString }}</summary>
   <div class="markdown-inner" aria-label="content">{{ .Inner | .Page.RenderString -}}</div>
 </details>

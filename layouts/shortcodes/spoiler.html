@@ -20,7 +20,14 @@
 <label for="spoiler-{{ $label }}" class="spoiler-inline" aria-label="spoiler content">{{ .Inner | .Page.RenderString }}</label>{{- /* chomp whitespace */ -}}
 </span>
 {{- else -}}{{- /* if is block */ -}}
-<details class="spoiler" aria-label="spoiler" title="Spoiler" {{ if eq $open true}}open{{ end }}>
+<details class="spoiler" aria-label="spoiler" title="Spoiler"
+  {{- if or (.Get "open") (in .Params "open") -}}
+    {{- (print " open") | safeHTMLAttr -}}
+  {{- end -}}
+  {{- with .Get "lang" -}}
+    {{- (printf " lang=%q" (.)) | safeHTMLAttr -}}
+  {{- end -}}
+>
   <summary>{{ $summary | .Page.RenderString }}</summary>
   <div class="markdown-inner" aria-label="spoiler content">{{ .Inner | .Page.RenderString }}</div>
 </details>
