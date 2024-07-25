@@ -24,7 +24,6 @@
     border: 1px solid $global-background-color;
     border-radius: 5px;
     padding: .5em;
-
     @include height-control;
   }
 
@@ -36,7 +35,7 @@
       background: inherit;
     }
 
-    code::after {
+    code::before {
       // display language
       content: attr(data-lang);
       text-transform: capitalize;
@@ -50,6 +49,10 @@
       font-weight: 700;
       height: 2em;
       color: #716c6c;
+    }
+
+    code:hover::before {
+      opacity: 0;
     }
   }
 
@@ -81,6 +84,16 @@
     code>span {
       display: flex;
       white-space: pre;
+    }
+  }
+
+  &>pre {
+    margin: .7em 0;
+
+    @media only screen and (min-width: 64rem) {
+      & {
+        margin: 1.2em 0;
+      }
     }
   }
 

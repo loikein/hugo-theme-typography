@@ -56,7 +56,7 @@ Do not{{< sticky "Uh-oh" "green" >}}
 
 Not really a shortcode, but I actually made the [sticky](#sticky) shortcode for it, so here we go:
 
-```poem
+```poem {lang="en"}
 The neighbours gossiped idly at the door.
 Copernicus lay dying overhead.
 His little throng of friends{{< sticky "I am a serious comment I am a serious comment I am a serious comment" "blue" >}}, with startled eyes,
@@ -67,12 +67,16 @@ He used to watch the stars.
 From Nuremberg at last; but who would dare
 To let him see it now?"--
                             "They have altered it!
+```
 
+```poem
 天地玄黄，宇宙洪荒。
 日月盈昃，辰宿列张。
 寒来暑往，秋收冬藏。
 闰余成岁，律吕调阳。
+```
 
+```poem {lang="ja"}
 色は匂へど　散りぬるを
 我が世誰ぞ　常ならむ
 有為の奥山　今日越えて
@@ -81,7 +85,7 @@ To let him see it now?"--
 
 ### Lyrics
 
-```lyrics
+```lyrics {lang="en"}
 Alas my loue, ye do me wrong{{< sticky "words goes here" "green" >}},  
 to cast me off discurteously:
 And I haue{{< sticky "more words goes more words goes more words goes more words goes more words goes here" "blue" >}} loued you so long,

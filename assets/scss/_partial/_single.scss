@@ -105,7 +105,12 @@
   &>ul,
   &>ol {
     padding-left: 2em;
-    // font-size: 105%;
+
+    @media only screen and (min-width: 48rem) {
+      & {
+        padding-left: 3em;
+      }
+    }
   }
 
   &>ul,
@@ -167,6 +172,12 @@
     // font-size: 105%;
     // line-height: 1.7;
     margin: .7em 0;
+
+    @media only screen and (min-width: 64rem) {
+      & {
+        margin: 1.2em 0;
+      }
+    }
   }
 
   img,
@@ -177,6 +188,12 @@
     height: auto;
     vertical-align: middle;
     padding-top: .5em;
+
+    @media only screen and (min-width: 64rem) {
+      & {
+        padding-top: .7em;
+      }
+    }
   }
 
   figcaption,
@@ -244,9 +261,6 @@
   // table tr:nth-child(2n),
   table tr:hover {
     background: rgba($global-background-color, 1);
-    // code {
-    //   border: 1px solid currentColor;
-    // }
   }
 
   table td {
@@ -271,26 +285,5 @@
     margin-right: .5em;
     margin-left: 1em;
     float: right
-  }
-
-  @media only screen and (min-width: 48rem) {
-
-    &>ul,
-    &>ol {
-      padding-left: 3em;
-    }
-  }
-
-  @media only screen and (min-width: 64rem) {
-
-    img,
-    video,
-    figure img {
-      padding-top: .7em;
-    }
-
-    p {
-      margin: 1.2em 0;
-    }
   }
 }
