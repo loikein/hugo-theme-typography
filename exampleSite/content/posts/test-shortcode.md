@@ -26,6 +26,8 @@ Because I {{< ruby "can" "want" >}}.
 
 {{< spoiler >}}Inline spoiler{{< /spoiler >}}
 
+Two spoilers with completely same content within one page causes bug: {{< spoiler >}}Inline spoiler{{< /spoiler >}}
+
 {{< spoiler title="Block spoiler" block=true >}}
 Like, really similar to Details. Almost look exactly the same.
 

@@ -1,9 +1,16 @@
-{{- with $.Page.Scratch.Get "spoilerCounter" -}}
-{{- $.Page.Scratch.Set "spoilerCounter" (add . 1) -}}
-{{- else -}}
-{{- $.Page.Scratch.Set "spoilerCounter" 1 -}}
-{{- end -}}
-{{- $label   := $.Page.Scratch.Get "spoilerCounter" -}}
+{{- /*
+
+New labelling method: take MD5 of page title + content
+
+Reduces (but still cannot completely eliminate) label collision.
+
+MD5 is faster than SHA1 (hopefully)
+
+Notes
+-----
+https://discourse.gohugo.io/t/i-want-to-remove-the-3-dots-added-at-the-end-of-truncate/44008/2
+
+*/ -}}
 
 {{- $block   := .Get "block" | default false -}}
 {{- $summary := .Get "title" | default "Spoiler" -}}
@@ -15,8 +22,9 @@
   Goal: keyboard friendly.
   Idea: https://stackoverflow.com/questions/62322298/
  */ -}}
+{{- $label   := (printf "%s%s" $.Page.Title .Inner) | md5 | truncate 7 "" -}}
 <span aria-label="spoiler" title="Spoiler">{{- /* chomp whitespace */ -}}
-<input type="checkbox" id="spoiler-{{ $label }}" class="spoiler-toggle screen-reader" aria-label="spoiler toggle"/>{{- /* chomp whitespace */ -}}
+<input type="checkbox" id="spoiler-{{ $label }}" class="spoiler-toggle screen-reader" aria-label="spoiler toggle" {{ if or (.Get "open") (in .Params "open") -}}checked{{ end -}}/>{{- /* chomp whitespace */ -}}
 <label for="spoiler-{{ $label }}" class="spoiler-inline" aria-label="spoiler content">{{ .Inner | .Page.RenderString }}</label>{{- /* chomp whitespace */ -}}
 </span>
 {{- else -}}{{- /* if is block */ -}}

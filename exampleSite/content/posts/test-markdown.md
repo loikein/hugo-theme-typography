@@ -119,10 +119,12 @@ func main() {
 我能体に傷つけないで吞下 259 ml glass。
 
 > Alas, my love, you do me wrong, To cast me off discourteously. For I have loved you well and long, Delighting in your company. Green&shy;sleeves was all my joy, Green&shy;sleeves was my delight, Green&shy;sleeves was my heart of gold, And who but my lady Green&shy;sleeves.
+> {lang=en}
 > 
 > 天地玄黄，宇宙洪荒。日月盈昃，辰宿列张。寒来暑往，秋收冬藏。闰余成岁，律吕调阳。云腾致雨，露结为霜。金生丽水，玉出昆冈。剑号巨阙，珠称夜光。果珍李柰，菜重芥姜。海咸河淡，鳞潜羽翔。龙师火帝，鸟官人皇。始制文字，乃服衣裳。推位让国，有虞陶唐。
 > 
 > 色は匂へど　散りぬるを　我が世誰ぞ　常ならむ　有為の奥山　今日越えて　浅き夢見し　酔ひもせず
+> {lang=ja}
 
 0 Oo Ii Ll 1 | 2 Z 5 s 8 Bb 6 #*^~(){}[] . , : ; “ ‘ ’ `
 
