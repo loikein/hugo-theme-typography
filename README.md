@@ -32,6 +32,7 @@ Upstream:
 - [x] Sticky-like side note
 - [x] Poem block
 - [x] Style for `<table>`
+- [ ] Refresh RSS feed
 - [ ] Refresh 404 page
 - [ ] (?) External link validation
 - [ ] (?) Taxonomy <u>terms</u> page CSS

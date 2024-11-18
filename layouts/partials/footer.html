@@ -1,7 +1,7 @@
 <footer class="site-footer">
 <p aria-label="Copyright info">
 ©&#32;{{ now.Format "2006" }}
-{{- with .Site.Author.name -}}&#32;{{ . }}{{- end -}}
+{{- with .Site.Params.Author.name -}}&#32;{{ . }}{{- end -}}
 {{- with .Site.Copyright -}}&#32;{{ . | markdownify}}{{- end -}}
 </p>
 <p aria-label="Theme info">Hugo Theme&#32;<a target="_blank" href="https://github.com/loikein/hugo-theme-typography">Typography</a></p>

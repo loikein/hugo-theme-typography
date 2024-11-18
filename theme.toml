@@ -19,7 +19,7 @@ features = [
   "syntax-highlighting",
   "search",
 ]
-min_version = "0.115.0"
+min_version = "0.128.0"
 
 [author]
   [author.lpgph]

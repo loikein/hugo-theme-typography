@@ -27,21 +27,21 @@
 {{ end }}{{ end }}
 </div>
 
-{{ if .Site.Social }}
+{{ if .Site.Params.Social }}
 <div class="social" aria-label="Social links">
-{{ with .Site.Social.twitter }}
+{{ with .Site.Params.Social.twitter }}
   <a href="https://twitter.com/{{ . }}" target="_blank" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 {{ end }}
-{{ with .Site.Social.github }}
+{{ with .Site.Params.Social.github }}
   <a href="https://github.com/{{ . }}" target="_blank" title="github"><i class="fa fa-github" aria-hidden="true"></i></a>
 {{ end }}
-{{ with .Site.Social.gitlab }}
+{{ with .Site.Params.Social.gitlab }}
   <a href="https://gitlab.com/{{ . }}" target="_blank" title="gitlab"><i class="fa fa-gitlab" aria-hidden="true"></i></a>
 {{ end }}
-{{ with .Site.Social.facebook }}
+{{ with .Site.Params.Social.facebook }}
   <a href="https://www.facebook.com/{{ . }}" target="_blank" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 {{ end }}
-{{ with .Site.Social.linkin }}
+{{ with .Site.Params.Social.linkin }}
   <a href="https://www.linkedin.com/{{ . }}" target="_blank" title="linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
 {{ end }}
 </div>

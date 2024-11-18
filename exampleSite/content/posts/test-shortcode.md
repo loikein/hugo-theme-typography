@@ -26,7 +26,7 @@ Because I {{< ruby "can" "want" >}}.
 
 {{< spoiler >}}Inline spoiler{{< /spoiler >}}
 
-Two spoilers with completely same content within one page causes bug: {{< spoiler >}}Inline spoiler{{< /spoiler >}}
+~~Two spoilers with completely same content within one page causes bug~~ {{< spoiler >}}Inline spoiler{{< /spoiler >}} Fixed. Now the ID of inline spoiler consists of both its content and its `.Ordinal` on page.
 
 {{< spoiler title="Block spoiler" block=true >}}
 Like, really similar to Details. Almost look exactly the same.
@@ -46,7 +46,7 @@ Marginalia (or apostils) are marks made in the margins{{< sticky "words goes her
 
 Some famous marginalia were serious works heart of gold, or drafts thereof, written in margins{{< sticky "你好世界" "pink" >}} due to scarcity of paper{{< sticky "consecutive consecutive consecutive consecutive consecutive notes" "purple" >}}. Voltaire composed in book margins while in prison, and Sir Walter Raleigh wrote a personal statement in margins just before his execution.
 
-Bug:
+### Bug
 
 Do not{{< sticky "Uh-oh" "green" >}}
 : Use in `<dt>`

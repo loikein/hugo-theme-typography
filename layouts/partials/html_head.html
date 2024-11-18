@@ -14,12 +14,12 @@
 {{- end -}}
 </title>
 
-{{ with .Params.author | default .Site.Params.author }}
+{{ with .Site.Params.author }}
   {{- /* https://github.com/theNewDynamic/gohugo-theme-ananke/blob/master/layouts/_default/baseof.html */ -}}
   {{- if reflect.IsSlice . -}}
   <meta name="author" content="{{- delimit . ", " | plainify -}}" />
   {{- else -}}
-  <meta name="author" content="{{- . | plainify -}}" />
+  <meta name="author" content="{{- .name | plainify -}}" />
   {{- end -}}
 {{ end }}
 
@@ -98,13 +98,13 @@ https://github.com/panr/hugo-theme-terminal/blob/master/layouts/partials/head.ht
 {{ if and (isset .Params "color") (not (eq .Params.color "")) }}
   {{ $localColorCss := resources.Get (printf "scss/_color/%s.scss" .Params.color) }}
   {{ $localCss := slice $localColorCss $defaultStyles | resources.Concat (printf "scss/%s-local.scss" .Params.color) }}
-  {{ $localColorStyles := $localCss | resources.ToCSS | resources.Minify }}
+  {{ $localColorStyles := $localCss | css.Sass | resources.Minify }}
   <link rel="stylesheet" href="{{ $localColorStyles.Permalink }}">
 {{ else }}
   <!-- Theme Variables -->
   {{ $colorCss := resources.Get (printf "scss/_color/%s.scss" ($.Site.Params.ThemeColor | default "ocean")) }}
   {{ $css := slice $colorCss $defaultStyles | resources.Concat "scss/index.scss" }}
-  {{ $styles := $css | resources.ToCSS | resources.Minify }}
+  {{ $styles := $css | css.Sass | resources.Minify }}
   <link rel="stylesheet" href="{{ $styles.Permalink }}">
 {{ end }}
 

@@ -23,6 +23,7 @@ https://discourse.gohugo.io/t/i-want-to-remove-the-3-dots-added-at-the-end-of-tr
   Idea: https://stackoverflow.com/questions/62322298/
  */ -}}
 {{- $label   := (printf "%s%s" $.Page.Title .Inner) | md5 | truncate 7 "" -}}
+{{- $label    = print $label "-" $.Ordinal -}}
 <span aria-label="spoiler" title="Spoiler">{{- /* chomp whitespace */ -}}
 <input type="checkbox" id="spoiler-{{ $label }}" class="spoiler-toggle screen-reader" aria-label="spoiler toggle" {{ if or (.Get "open") (in .Params "open") -}}checked{{ end -}}/>{{- /* chomp whitespace */ -}}
 <label for="spoiler-{{ $label }}" class="spoiler-inline" aria-label="spoiler content">{{ .Inner | .Page.RenderString }}</label>{{- /* chomp whitespace */ -}}

@@ -21,4 +21,4 @@
     </span>
   {{- end }}
   </p>
-<section>{{ .Summary }}……</section>
+<section>{{ .Content | plainify | strings.Truncate .Site.Params.Summarylength "" }}…</section>

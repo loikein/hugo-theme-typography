@@ -12,8 +12,8 @@ defaultContentLanguage = "zh"
   languageCode = "zh-Hans"
   languageDirection = "ltr"
 
-paginate = 3
-paginatePath = "page"
+pagination.pagerSize = 3
+pagination.path = "page"
 enableEmoji = false
 enableRobotsTXT = true
 enableGitInfo = false # use git commit log to generate lastmod record # 可根据 Git 中的提交生成最近更新记录。
@@ -35,15 +35,6 @@ enableGitInfo = false # use git commit log to generate lastmod record # 可根�
 #  note = "note"
 
 #disableKinds = ["taxonomyTerm"]
-
-[author]
-  name = "loikein"
-
-[social]
-  Twitter = "example"
-  GitHub = "example"
-  Facebook = "example"
-  LinkIn = "example"
 
 [markup.highlight]
   style = "friendly"
@@ -79,72 +70,86 @@ enableGitInfo = false # use git commit log to generate lastmod record # 可根�
   search = true
   NoIndex = false
 
+  summaryLength = 100
+  # Non-standard usage
+  # set length of page summary in list of pages
+
   DateFormat = '2006-01-02'
   MonthFormat = '2006-01'
   FancyBox = true
   CreativeCommons = true
   MathJax = true
 
-  #paginateOriginalStyle = true
+  # paginateOriginalStyle = true
   # 首页展示内容
   mainSections = ["posts"]
 
-  [Params.paginate]
-    posts = 20   # number of posts per page in condensed archive (list) layout
+[Params.author]
+  name = "loikein"
 
-  # [Params.Waline]
-  #   serverURL = ''
+[Params.social]
+  Twitter = "example"
+  GitHub = "example"
+  Facebook = "example"
+  LinkIn = "example"
 
-  # [Params.Gitalk]
-  #   language = 'zh-CN'
-  #   clientID = ''
-  #   clientSecret = ''
-  #   repo = ''
-  #   owner = ''
-  #   admin = ['']
-  #   distractionFreeMode = false
+
+[Params.paginate]
+  posts = 20   # number of posts per page in condensed archive (list) layout
+
+# [Params.Waline]
+#   serverURL = ''
+
+# [Params.Gitalk]
+#   language = 'zh-CN'
+#   clientID = ''
+#   clientSecret = ''
+#   repo = ''
+#   owner = ''
+#   admin = ['']
+#   distractionFreeMode = false
 
 [Menu]
-  # [[Menu.Main]]
-  #   Name = 'home'
-  #   identifier = "home"
-  #   # pre = "home"
-  #   URL = '/'
-  #   weight = 1
-  [[Menu.Main]]
-    Name = 'archive'
-    identifier = "archive"
-    # pre = "archive"
-    URL = '/posts/'
-    weight = 2
-  [[Menu.Main]]
-    Name = 'notes'
-    identifier = "notes"
-    # pre = "sticky-note"
-    URL = '/notes/'
-    weight = 3
-  [[Menu.Main]]
-    Name = 'photos'
-    identifier = "photos"
-    # pre = "photo"
-    URL = '/photos/'
-    weight = 4
-  [[Menu.Main]]
-    Name = 'categories'
-    identifier = "categories"
-    URL = '/categories/'
-    weight = 5
-  [[Menu.Main]]
-    Name = 'tags'
-    identifier = "tags"
-    URL = '/tags/'
-    weight = 6
-  [[Menu.Main]]
-    Name = 'about'
-    identifier = "about"
-    # pre = "user"
-    URL = '/about/'
-    weight = 7
+# [[Menu.Main]]
+#   Name = 'home'
+#   identifier = "home"
+#   # pre = "home"
+#   URL = '/'
+#   weight = 1
+[[Menu.Main]]
+  Name = 'archive'
+  identifier = "archive"
+  # pre = "archive"
+  URL = '/posts/'
+  weight = 2
+[[Menu.Main]]
+  Name = 'notes'
+  identifier = "notes"
+  # pre = "sticky-note"
+  URL = '/notes/'
+  weight = 3
+[[Menu.Main]]
+  Name = 'photos'
+  identifier = "photos"
+  # pre = "photo"
+  URL = '/photos/'
+  weight = 4
+[[Menu.Main]]
+  Name = 'categories'
+  identifier = "categories"
+  URL = '/categories/'
+  weight = 5
+[[Menu.Main]]
+  Name = 'tags'
+  identifier = "tags"
+  URL = '/tags/'
+  weight = 6
+[[Menu.Main]]
+  Name = 'about'
+  identifier = "about"
+  # pre = "user"
+  URL = '/about/'
+  weight = 7
 
 # full top bottom left right
 
